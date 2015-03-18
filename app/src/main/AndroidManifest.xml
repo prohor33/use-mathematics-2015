@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="crystal.tech.usemathematics" >
 
+    <!-- permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Optional, but without them, you might get less ads and tracking could be less accurate -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -15,6 +22,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainTopicListActivity"
+            android:label="@string/title_activity_main_topic_list" >
         </activity>
     </application>
 

@@ -47,7 +47,7 @@ var app = {
         console.log('Received Event: ' + id);
     },
 
-    goTaskListPage: function() {
-        window.location = "task_list.html";
+    goStartPage: function() {
+        window.location = "index.html";
     }
 };

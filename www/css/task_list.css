@@ -112,18 +112,26 @@ h1 {
     width: 60px;
     height: 60px;
     text-align: center;
-    font-size: 20px;
+    font-size: 21px;
     font-family:arial;
     text-decoration:none;
-    text-shadow:0px 1px 0px #2f6627;
+    /*text-shadow:0px 1px 0px #2f6627;*/
     margin: 0;
+    color: #545454;
 }
 
 .taskname {
     /*background-color: #AA0000;*/
     height: auto;
-    line-height: 30px;
     margin: 0;
+    text-align: left;
+    font-size: 17px;
+    font-family: arial;
+    text-decoration:none;
+    /*font-weight: bold;*/
+    text-transform: none;
+    padding: 8px;
+    color: #545454;
 }
 
 
@@ -135,5 +143,8 @@ table {
   border-collapse:collapse;
 }
 
+.arrowright {
+    margin-right: 10px;
+}
 
 

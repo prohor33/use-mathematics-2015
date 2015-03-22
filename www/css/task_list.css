@@ -104,7 +104,7 @@ h1 {
     border-bottom-width: 1px;
 }
 .listitem:active {
-    background-color:#c1c1c1;
+    background-color:#FBC02D;
 }
 
 .tasknumber {
@@ -128,12 +128,15 @@ h1 {
     font-size: 17px;
     font-family: arial;
     text-decoration:none;
-    /*font-weight: bold;*/
+    font-weight: bold;
     text-transform: none;
     padding: 8px;
     color: #545454;
 }
 
+.arrowright {
+    margin-right: 10px;
+}
 
 /* For all tables! */
 table, th, td {
@@ -141,10 +144,6 @@ table, th, td {
 }
 table {
   border-collapse:collapse;
-}
-
-.arrowright {
-    margin-right: 10px;
 }
 
 

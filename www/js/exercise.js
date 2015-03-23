@@ -45,9 +45,5 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    },
-
-    goStartPage: function() {
-        window.location = "index.html";
     }
 };

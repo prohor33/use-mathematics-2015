@@ -16,32 +16,37 @@
     <body>
         <div class="toolbar">
             <button class="back" onclick="toolbar.onBack()"></button>
-            <div class="title">Task</div>
+            <div class="title">Тема 1</div>
         </div>
         
-        <h1>Целые, рациональные и дробные числа</h1>
+        <div class="content">
+            <h1>Целые, рациональные и дробные числа</h1>
 
-        <center>
-            <iframe class="video" width="250" height="180" scale=”aspect” frameborder="0"
-                src="http://www.youtube.com/embed/n8hrTW-olbQ?hd=1&rel=0&autohide=1&showinfo=0">
-            </iframe>
-        </center>
+            <center>
+                <iframe class="video" width="250" height="180" scale=”aspect” frameborder="0"
+                    src="http://www.youtube.com/embed/n8hrTW-olbQ?hd=1&rel=0&autohide=1&showinfo=0">
+                </iframe>
+            </center>
 
-        <p class="text">
-            Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст.
-        </p>
+            <p class="text">
+                Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст. Текст задачи из видео. Еще какой-то текст.
+            </p>
 
-        <button class="exercise_button" onclick="document.location = 'exercise1.html';">Задачи</button>
+            <button class="exercise_button" onclick="document.location = 'exercise1.html';">Задачи</button>
 
-        <div class="app">
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+            <div class="app">
+                <div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                </div>
             </div>
         </div>
+
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="../../js/script.js"></script>
         <script type="text/javascript" src="../../js/theme.js"></script>
         <script type="text/javascript">
+            toolbar.setParent("../../themes_list.html");
             app.initialize();
         </script>
     </body>

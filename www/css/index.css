@@ -8,7 +8,6 @@
 body {
     background-image: url("../img/back_squared.png");
     background-size: 100% auto;
-    /*background: #AAAAAA;*/
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
@@ -97,7 +96,7 @@ body {
     position: absolute;
     width: 200px;
     height: 60px;
-    top: 80%;
+    top: 82%;
     left: 50%;
     margin-top: -30px;
     margin-left: -100px;
@@ -117,8 +116,35 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 15%;
-    width: 84%;
+    top: 24%;
+    width: 80%;
     /*height: 38%;*/
+    border: 3px solid;
+    border-color: #FFFFFF;
+    border-radius: 2px;
+}
+
+.ruler {
+    position: absolute;
+    left: -190px;
+    bottom: 130px;
+    z-index: -1;
+    transform: translate(50%, 50%) rotate(-55deg);
+}
+
+.pencil {
+    position: absolute;
+    right: -35px;
+    bottom: 0px;
+    z-index: -1;
+    transform: translate(50%, 50%) rotate(140deg);
+}
+
+.pen {
+    position: absolute;
+    left: -165px;
+    bottom: 280px;
+    z-index: -1;
+    transform: translate(50%, 50%) rotate(135deg);
 }
 

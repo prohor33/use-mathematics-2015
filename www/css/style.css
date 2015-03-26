@@ -47,7 +47,7 @@ img.back {
     height: 40px;
     transform: translate(0%, -50%);
 }
-img.back:hover {
+img.back:active {
     background-color:#ffab23;
     border-radius: 20px;
 }

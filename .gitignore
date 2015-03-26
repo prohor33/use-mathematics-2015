@@ -50,5 +50,5 @@ platforms/ios/www/*
 .Trashes
 
 # temporary
-platforms/
-plugins/
+platforms/android/*
+plugins/*

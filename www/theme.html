@@ -15,7 +15,7 @@
     </head>
     <body onload="load_data()">
         <div class="toolbar">
-            <img class="back" src="../../img/arrow_back.png" onclick="toolbar.onBack()"></img>
+            <img class="back" src="img/arrow_back.png" onclick="toolbar.onBack()"></img>
             <div class="title">B1</div>
         </div>
         
@@ -45,10 +45,9 @@
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/theme.js"></script>
-        <script type="text/javascript" src="data/themes.json"></script>
         <script type="text/javascript">
-            toolbar.setParent("themes_list.html");
             app.initialize();
         </script>
+        <script type="text/javascript" src="data/themes.json"></script>
     </body>
 </html>

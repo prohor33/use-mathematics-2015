@@ -6,61 +6,64 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    /*
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    */
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
+    background-attachment: fixed;
+    font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    /*background-color: #0000FF;*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
     text-transform:uppercase;
-    width:100%;
 }
 
 .toolbar {
     position: fixed;
-    top: 0px;
     width: 100%;
-    height: 64px;
+    height: 10%;
     padding: 0px;
     margin: 0px;
     background-color: #ffec64;
+    z-index: 1;
 }
 
 img.back {
     position: absolute;
-    top: 50%;
-    left: 8px;
-    width: 40px;
-    height: 40px;
-    transform: translate(0%, -50%);
+    top: 16%;
+    left: 15px;
+    width: auto;
+    height: 65%;
 }
 img.back:active {
     background-color:#ffab23;
-    border-radius: 20px;
+    border-radius: 200px;
 }
 
-.toolbar .title {
+/* toolbar */
+.title {
+    /*background-color: #00FFFF;*/
     position: absolute;
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
     top: 50%;
     left: 50%;
-    font-size: 16pt;
-    font-weight: bold;
+    -ms-transform: translate(-50%, -50%); /* IE 9 */
+    -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
     transform: translate(-50%, -50%);
 }
 
 .content {
-    margin-top: 64px;
+    /*background-color: #AAAAFF;*/
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.toolbar_space {
+    width: 100%;
+    height: 10%;
+    padding: 0px;
+    margin: 0px;
 }

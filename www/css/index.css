@@ -7,14 +7,16 @@
 
 body {
     background-image: url("../img/back_squared.png");
-    /* TODO: not working on small devices; */
-    background-size: 100% auto; 
-
-/*    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    -o-background-size: 100% auto;
-    background-size: 100% auto;*/
+    /* TODO: not working on some devices; */
+    background-size: 100% auto;
     z-index: -2;
+    /* Prevent scrolling */
+    overflow: hidden;
+}
+
+html {
+    /* Prevent scrolling */
+    overflow: hidden;
 }
 
 /* Landscape layout (with min-width) */
@@ -72,7 +74,6 @@ body {
 }
 
 .ruler {
-    /*display: block;*/
     position: absolute;
     width: 25%;
     left: -45%;

@@ -126,6 +126,7 @@ h1 {
     right: 0;
     top: auto;
     width: 90%;
+    margin-bottom: 6%;
 }
 .exercise_button:hover {
     background-color:#ffab23;

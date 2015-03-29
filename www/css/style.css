@@ -30,10 +30,10 @@ body {
 
 img.back {
     position: absolute;
-    top: 16%;
+    top: 19%;
     left: 15px;
     width: auto;
-    height: 65%;
+    height: 62%;
 }
 img.back:active {
     background-color:#ffab23;
@@ -55,7 +55,7 @@ img.back:active {
 }
 
 .content {
-    /*background-color: #AAAAFF;*/
+    /*background-color: #FFAAFF;*/
     width: 100%;
     padding: 0px;
     margin: 0px;

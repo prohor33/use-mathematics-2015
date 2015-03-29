@@ -5,31 +5,6 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
-body {
-    background-image: url("../img/back_squared.png");
-    background-size: 100% auto;
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    text-transform:uppercase;
-    /*background-color: #7766CC;*/
-    padding:0px;
-    margin:0px;
-}
-
-/* Portrait layout (default) */
-.app {
-    /*background-color: #3366CC;*/
-    position:absolute;             /* position in the center of the screen */
-    left:20%;
-    top:90%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-}
-
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
@@ -37,49 +12,13 @@ body {
     }
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#FF3333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-.blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
-}
-
 h1 {
     font-size: 24px;
     font-weight: normal;
-    margin: 13px;
-    margin-top: 80px;
     overflow: visible;
-    padding: 0px;
+    padding: 10px;
+    padding-bottom: 13px;
+    margin: 0px;
     text-align: center;
     text-transform: none;
 }
@@ -90,7 +29,6 @@ h1 {
     margin-right: auto;
     left: auto;
     right: 0;
-    top: auto;
     width: 85%;
 }
 
@@ -119,12 +57,7 @@ h1 {
     padding:6px 24px;
     text-decoration:none;
     text-shadow:0px 1px 0px #ffee66;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    top: auto;
+    margin-left: 5%;
     width: 90%;
     margin-bottom: 6%;
 }
@@ -132,4 +65,8 @@ h1 {
     background-color:#ffab23;
 }
 
-
+.content {
+/*    background-image: url("../img/back_squared.png");
+    background-size: 100% auto;*/
+    min-height: 90%;
+}

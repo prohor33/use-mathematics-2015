@@ -8,7 +8,7 @@
 body {
     background-image: url("../img/back_squared.png");
     /* TODO: not working on some devices; */
-    background-size: 100% auto;
+    background-size: 30% auto;
     z-index: -2;
     /* Prevent scrolling */
     overflow: hidden;

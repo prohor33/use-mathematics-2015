@@ -23,19 +23,44 @@
 
         <div class="content">
 
-            <p class="text">
+            <p class="text" id="text_task0">
                 Теплоход рассчитан на 550 пассажиров и 15 членов команды. Каждая спасательная шлюпка может вместить 50 человек. Какое наименьшее число шлюпок должно быть на теплоходе, чтобы в случае необходимости в них можно было разместить всех пассажиров и всех членов команды?
             </p>
+            <p class="answer" hidden>10</p>
+
+            <p class="text" hidden>
+                Шоколадка стоит 35 рублей. В воскресенье в супермаркете действует специальное предложение: заплатив за три шоколадки, покупатель получает четыре (одну в подарок). Сколько шоколадок можно получить на 260 рублей в воскресенье?
+            </p>
+            <p class="answer" hidden>11</p>
+
+            <p class="text" hidden>
+                Таксист за месяц проехал 6000 км. Стоимость 1 литра бензина 20 рублей. Средний расход бензина на 100 км составляет 9 л. Сколько рублей потратил таксист на бензин за этот месяц?
+            </p>
+            <p class="answer" hidden>12</p>
+
+            <p class="text" hidden>
+                На счету Юлиного мобильного телефона был 71 рубль, а после разговора с Мишей осталось 47 рублей. Сколько минут длился разговор с Мишей, если одна минута разговора стоит 1 рубль 50 копеек.
+            </p>
+            <p class="answer" hidden>13</p>
+
+            <p class="text" hidden>
+                Выпускники 11 "А" покупают букеты цветов для последнего звонка: из 3 роз каждому учителю и из 11 роз классному руководителю и директору. Они собираются подарить букеты 15 учителям (включая директора и классного руководителя), розы покупаются по оптовой цене 35 рублей за штуку. Сколько рублей стоят все розы?
+            </p>
+            <p class="answer" hidden>14</p>
 
             <!-- <button class="exercise_button" onclick="document.location = 'exercise.html';">Задачи</button> -->
 
             <input class="form-field" type="text" name="email" />
-            <a href="#" class="answer_button">Ответить</a>
-            <a href="#" class="answer_button">Показать ответ</a>
+            <a href="#" class="answer_button" onclick="try_to_answer()">Ответить</a>
+            <a href="#" class="answer_button" id="show_answer_button" onclick="show_answer()">Показать ответ</a>
         </div>
 
         <div class="bottom_panel">
             <div class="bottom_panel_title">Вариант 1 из 5</div>
+            <img class="task_arrow" id="task_arrow_right" src="img/arrow_right_tasks.png" onclick="next_task()"></img>
+            <img class="task_arrow" id="task_arrow_left" src="img/arrow_left_tasks.png" onclick="prev_task()"></img>
+        </div>
+        <div class="bottom_panel_space">
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>

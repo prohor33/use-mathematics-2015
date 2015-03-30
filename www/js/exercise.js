@@ -1,49 +1,51 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+    Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+ var current_task = 0
+ var max_task = 5
 
-        console.log('Received Event: ' + id);
-    }
-};
+function next_task() {
+    var task_was = current_task;
+    if (current_task < max_task - 1)
+        current_task++;
+
+    update_task(task_was);
+}
+function prev_task() {
+    var task_was = current_task;
+    if (current_task > 0)
+        current_task--;
+
+    update_task(task_was);
+}
+
+function update_task(task_was) {
+    var tasks = document.getElementsByClassName("text");
+
+    tasks[task_was].style.display = "none";
+    tasks[current_task].style.display = "inherit";
+
+    var bottom_panel_title = document.getElementsByClassName("bottom_panel_title")[0];
+    bottom_panel_title.innerHTML = "Вариант " + (current_task + 1).toString() + " из " + max_task.toString();
+
+    // clear edit field
+    document.getElementsByClassName("form-field")[0].value = "";
+}
+
+function show_answer() {
+    var edit_field = document.getElementsByClassName("form-field")[0];
+    edit_field.value = document.getElementsByClassName("answer")[current_task].innerHTML;
+}
+
+function try_to_answer() {
+    var edit_field = document.getElementsByClassName("form-field")[0];
+    var right = edit_field.value == document.getElementsByClassName("answer")[current_task].innerHTML;
+
+    var color = "red";
+    if (right)
+        color = "green";
+
+    edit_field.style.borderColor = color;
+    edit_field.style.borderWidth = "medium";
+}

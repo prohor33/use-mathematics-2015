@@ -2,6 +2,10 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
+html {
+    height: 100%;
+}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -15,7 +19,7 @@ body {
     margin: 0px;
     padding: 0px;
     text-transform:uppercase;
-    background-color: #FCFCFC;
+    /*background-color: #FF0000;*/
 }
 
 .toolbar {
@@ -59,6 +63,7 @@ img.back:active {
     width: 100%;
     padding: 0px;
     margin: 0px;
+    min-height: 90%;
 }
 
 .toolbar_space {

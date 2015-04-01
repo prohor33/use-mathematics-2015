@@ -118,7 +118,7 @@ body {
     margin-bottom: 15px;
 }
 
-.form-field {
+#form-field {
     border: 1px solid #b8b8b8;
     background: #FFFFFF;
     -webkit-border-radius: 6px;
@@ -134,9 +134,67 @@ body {
     margin-top: 10px;
     font-size:20px;
 }
-.form-field:focus {
+#form-field:focus {
    background: #fff;
    color: #1f1f1f;
+}
+#form-field.wrong_answer {
+    -webkit-animation-name: wrong_answer; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    animation-name: wrong_answer;
+    animation-duration: 3s;
+}
+#form-field.right_answer {
+    -webkit-animation-name: right_answer; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 3s; /* Chrome, Safari, Opera */
+    animation-name: right_answer;
+    animation-duration: 3s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes wrong_answer {
+    from {
+        border-width: medium;
+        border-color: red;
+    }
+    to {
+        border-width: medium;
+        border-color: white;
+    }
+}
+/* Standard syntax */
+@keyframes wrong_answer {
+    from {
+        border-width: medium;
+        border-color: red;
+    }
+    to {
+        border-width: medium;
+        border-color: white;
+    }
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes right_answer {
+    from {
+        border-width: medium;
+        border-color: green;
+    }
+    to {
+        border-width: medium;
+        border-color: white;
+    }
+}
+/* Standard syntax */
+@keyframes right_answer {
+    from {
+        border-width: medium;
+        border-color: green;
+    }
+    to {
+        border-width: medium;
+        border-color: white;
+    }
 }
 
 .bottom_panel_space {

@@ -38,14 +38,44 @@ function show_answer() {
     edit_field.value = document.getElementsByClassName("answer")[current_task].innerHTML;
 }
 
+var edit_field = document.getElementById("form-field");
+
+// apply all webkit events
+edit_field.addEventListener("webkitAnimationStart", animation_listener);
+edit_field.addEventListener("webkitAnimationIteration", animation_listener);
+edit_field.addEventListener("webkitAnimationEnd", animation_listener);
+
+// and standard events
+edit_field.addEventListener("animationstart", animation_listener);
+edit_field.addEventListener("animationiteration", animation_listener);
+edit_field.addEventListener("animationend", animation_listener);
+
+// handle animation events
+function animation_listener(e) {
+    if (e.type.toLowerCase().indexOf("animationend") >= 0) {
+        toggle_animation(true);
+    }
+}
+
+// start/stop animation
+function toggle_animation(right) {
+    var on = (edit_field.className != "");
+    edit_field.className = (on ? "" : ((right ? "right" : "wrong") + "_answer"));
+};
+
 function try_to_answer() {
-    var edit_field = document.getElementsByClassName("form-field")[0];
     var right = edit_field.value == document.getElementsByClassName("answer")[current_task].innerHTML;
 
-    var color = "red";
-    if (right)
-        color = "green";
+    // var color = "red";
+    // if (right)
+    //     color = "green";
 
-    edit_field.style.borderColor = color;
-    edit_field.style.borderWidth = "medium";
+    // edit_field.style.borderColor = color;
+    // edit_field.style.borderWidth = "medium";
+
+    if (right)
+        alert("Ответ верный!");
+
+    toggle_animation(right);
 }
+

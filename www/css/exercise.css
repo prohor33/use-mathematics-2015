@@ -12,6 +12,7 @@
     }
 }
 
+/* grandient back */
 body {
     background: #ffffff; /* Old browsers */
     background: -moz-linear-gradient(top,  #ffffff 0%, #efefef 100%); /* FF3.6+ */
@@ -29,6 +30,17 @@ body {
     /*font-size: 16px;*/
     font-size: 150%;
     text-transform: none;
+}
+
+img.formula {
+    position: absolute;
+    top: 19%;
+    right: 15px;
+    width: auto;
+    height: 62%;
+}
+img.formula:active {
+    opacity: .5;
 }
 
 .bottom_panel {

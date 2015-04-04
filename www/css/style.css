@@ -40,8 +40,9 @@ img.back {
     height: 62%;
 }
 img.back:active {
-    background-color:#ffab23;
-    border-radius: 200px;
+    /*background-color:#ffab23;*/
+    /*border-radius: 200px;*/
+    opacity: .5;
 }
 
 /* toolbar */

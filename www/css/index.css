@@ -106,6 +106,20 @@ html {
     transform: translate(50%, 50%) rotate(135deg);
 }
 
+/* TODO: doesn't work! */
+.title {
+    font-size: 170%;
+}
+
+.toolbar {
+    height: 30%;
+    background-color: #00ff24;
+}
+
+.toolbar_space {
+    height: 30%;
+}
+
 .content {
     min-height: 0%;
 }

@@ -108,16 +108,15 @@ html {
 
 /* TODO: doesn't work! */
 .title {
-    font-size: 170%;
+    font-size: 180%;
 }
 
 .toolbar {
-    height: 30%;
-    background-color: #00ff24;
+    height: 12%;
 }
 
 .toolbar_space {
-    height: 30%;
+    height: 12%;
 }
 
 .content {

@@ -25,7 +25,8 @@ body {
 }
 
 .text {
-    margin: 15px;
+    margin: 0px;
+    padding: 15px;
     top: auto;
     /*font-size: 16px;*/
     font-size: 150%;
@@ -50,6 +51,8 @@ img.formula:active {
     height: 9%;
     top: 91%;
     border-radius: 10px;
+    margin: 0px;
+    padding: 0px;
 }
 
 .bottom_panel_title {

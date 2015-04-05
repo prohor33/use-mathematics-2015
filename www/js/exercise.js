@@ -20,6 +20,8 @@ function prev_task() {
     update_task(task_was);
 }
 
+var edit_field = document.getElementById("form-field");
+
 function update_task(task_was) {
     var tasks = document.getElementsByClassName("text");
 
@@ -30,15 +32,12 @@ function update_task(task_was) {
     bottom_panel_title.innerHTML = "Вариант " + (current_task + 1).toString() + " из " + max_task.toString();
 
     // clear edit field
-    document.getElementsByClassName("form-field")[0].value = "";
+    edit_field.value = "";
 }
 
 function show_answer() {
-    var edit_field = document.getElementsByClassName("form-field")[0];
     edit_field.value = document.getElementsByClassName("answer")[current_task].innerHTML;
 }
-
-var edit_field = document.getElementById("form-field");
 
 // apply all webkit events
 edit_field.addEventListener("webkitAnimationStart", animation_listener);

@@ -106,7 +106,10 @@ html {
     transform: translate(50%, 50%) rotate(135deg);
 }
 
-/* TODO: doesn't work! */
+#youtube_player {
+    display: none;
+}
+
 .title {
     font-size: 180%;
 }

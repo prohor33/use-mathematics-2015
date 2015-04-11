@@ -1,68 +1,93 @@
 /*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
+ * Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
 
-        // Find out what the browser is
-        // navigator.sayswho= (function(){
-        //     var ua= navigator.userAgent, tem, 
-        //     M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-        //     if(/trident/i.test(M[1])){
-        //         tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
-        //         return 'IE '+(tem[1] || '');
-        //     }
-        //     if(M[1]=== 'Chrome'){
-        //         tem= ua.match(/\bOPR\/(\d+)/)
-        //         if(tem!= null) return 'Opera '+tem[1];
-        //     }
-        //     M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
-        //     if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
-        //     return M.join(' ');
-        // })();
+// function checkConnection() {
+//     alert("1");
+//     var networkState = navigator.connection.type;
+//     var networkState2;
+//     alert("2 = " + networkState);
 
-        // alert(navigator.sayswho);
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+//     var states = {};
+//     states[Connection.UNKNOWN]  = 'Unknown connection';
+//     states[Connection.ETHERNET] = 'Ethernet connection';
+//     states[Connection.WIFI]     = 'WiFi connection';
+//     states[Connection.CELL_2G]  = 'Cell 2G connection';
+//     states[Connection.CELL_3G]  = 'Cell 3G connection';
+//     states[Connection.CELL_4G]  = 'Cell 4G connection';
+//     states[Connection.CELL]     = 'Cell generic connection';
+//     states[Connection.NONE]     = 'No network connection';
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+//     alert('Connection type: ' + states[networkState]);
+// }
 
-        console.log('Received Event: ' + id);
+// checkConnection();
+
+// document.addEventListener('deviceready', checkConnection, false);
+
+var connection = true
+
+function checkConnection() {
+    try {
+        var networkState = navigator.connection && navigator.connection.type;
+
+        setTimeout(function(){
+            networkState = navigator.connection && navigator.connection.type;
+
+            // var states = {};
+            // states[Connection.UNKNOWN]  = 'Unknown connection';
+            // states[Connection.ETHERNET] = 'Ethernet connection';
+            // states[Connection.WIFI]     = 'WiFi connection';
+            // states[Connection.CELL_2G]  = 'Cell 2G connection';
+            // states[Connection.CELL_3G]  = 'Cell 3G connection';
+            // states[Connection.CELL_4G]  = 'Cell 4G connection';
+            // states[Connection.NONE]     = 'No network connection';
+
+            // alert('Connection type: ' + states[networkState]);
+            connection = !(networkState == Connection.NONE || networkState == Connection.UNKNOWN);
+        }, 500);
+    } catch(e) {
+        alert(e);
+        $.each(navigator, function(key, value) {
+            alert(key+' => '+value);
+        });
     }
-};
+}
+
+function img_on_click() {
+
+    checkConnection();
+
+    setTimeout(function() {
+        if (!connection) {
+            alert("Есть проблемы с интернет соединением, пожалуйста, проверьте настройки подключения");
+            return;
+        }
+        show_video();
+    }, 550);
+}
+
+function show_video() {
+    var youtube_player = document.getElementById('youtube_player');
+    var video_image = document.getElementById('video_image');
+    // TODO: make it autoplay
+    youtube_player.innerHTML = "<iframe id=\"video\" class=\"video\" frameborder=\"0\"\
+    src=\"http://www.youtube.com/embed/MMC0iaz6bac?autoplay=1&hd=1&rel=0&autohide=1&showinfo=0\"></iframe>";
+    youtube_player.style.display = 'initial';
+    video_image.style.display = 'none';
+
+    // var video = document.getElementById("video");
+
+    // // doesn't work??
+    // var so = cordova.plugins.screenorientation;
+    // so.setOrientation(so.Orientation.LANDSCAPE);
+    // alert("set orination to landscape");
+
+    // video.addEventListener("playing", function() {
+    //     alert("event");
+    //     console.log("event");
+    //     var so = cordova.plugins.screenorientation;
+    //     so.setOrientation(so.Orientation.LANDSCAPE);
+    // }, false);
+}
+

@@ -6,17 +6,12 @@
 }
 
 body {
-    background-image: url("../img/back_squared.png");
     /* TODO: not working on some devices; */
     background-size: 30% auto;
     z-index: -2;
     /* Prevent scrolling */
-    overflow: hidden;
-}
-
-html {
-    /* Prevent scrolling */
-    overflow: hidden;
+    /* Settings in from js */
+    /*overflow: hidden;*/
 }
 
 /* Landscape layout (with min-width) */
@@ -111,18 +106,14 @@ html {
     display: none;
 }
 
-.title {
+#index_title {
     font-size: 180%;
 }
 
-.toolbar {
+#index_toolbar {
     height: 12%;
 }
 
-.toolbar_space {
-    height: 12%;
-}
-
-.content {
-    min-height: 0%;
-}
+/*.index_page { display: none; }*/
+/*.theme_list_page { display: none; }*/
+/*body { background-image: url("../img/back_squared.png"); }*/

@@ -79,14 +79,19 @@ function show_video() {
 
 function switch_pages(to_index) {
     // alert("0");
-    var index_page = document.getElementsByClassName('index_page')[0];
-    index_page.style.display = to_index ? 'inherit' : 'none';
+    var elements = document.getElementsByClassName('index_page');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = to_index ? 'inherit' : 'none';
+    }
 
-    var content = document.getElementsByClassName('content')[0];
-    content.style.display = !to_index ? 'inherit' : 'none';
+    var elements = document.getElementsByClassName('theme_list_page');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = !to_index ? 'inherit' : 'none';
+    }
 
-    document.body.style.backgroundImage = to_index ? 'url(../img/back_squared.png)' : 'none';
-    // alert("1");
+    document.body.style.backgroundImage = to_index ? 'url(img/back_squared.png)' : 'none';
+    // alert("0");
+    document.body.style.overflow = to_index ? "hidden" : "inherit";
 
     var back = document.getElementsByClassName('back')[0];
     back.style.display = !to_index ? 'inherit' : 'none';

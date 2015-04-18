@@ -12,12 +12,16 @@
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/themes_list.css" />
+        <script type="text/javascript" src="js/index_start.js"></script>
         <title>ЕГЭ Математика 2015</title>
     </head>
     <body>
-        <div class="toolbar">
-            <img class="back" src="img/arrow_back.png" onclick="switch_pages(true)" hidden></img>
-            <div class="title">Математика<br>ЕГЭ 2015</div>
+        <div class="toolbar index_page" id="index_toolbar">
+            <div class="title" id="index_title">Математика<br>ЕГЭ 2015</div>
+        </div>
+        <div class="toolbar theme_list_page">
+            <img class="back" src="img/arrow_back.png" onclick="switch_pages(true)"></img>            
+            <div class="title">Список Тем</div>
         </div>
         <div class="toolbar_space">
         </div>
@@ -33,7 +37,7 @@
             <img class="pen" src="img/pen.png"></img>            
         </div>
 
-        <div class="content" hidden>
+        <div class="content theme_list_page">
             <table class="table" width=100%>
                 <tr class="listitem" onclick="document.location = 'theme.html?theme=0';">
                     <td class="tasknumber">

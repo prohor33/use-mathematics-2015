@@ -50,7 +50,7 @@ h1 {
     border:1px solid #ffaa22;
     display:inline-block;
     cursor:pointer;
-    color:#333333;
+    color:#ffaa22;
     font-family:arial;
     font-size:25px;
     font-weight:bold;
@@ -62,7 +62,7 @@ h1 {
     margin-bottom: 6%;
 }
 .exercise_button:hover {
-    background-color:#ffab23;
+    background-color:#E8D86A;
 }
 
 .content {

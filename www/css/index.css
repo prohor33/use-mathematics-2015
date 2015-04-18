@@ -37,7 +37,8 @@ html {
     border:1px solid #ffaa22;
     display:inline-block;
     cursor:pointer;
-    color:#333333;
+    /*color:#333333;*/
+    color: #F57F17;
     font-family:arial;
     font-size: 25px;
     font-weight: bold;
@@ -51,7 +52,7 @@ html {
     top: 78%;
 }
 .goButton:hover {
-    background-color:#ffab23;
+    background-color:#E8D86A;
 }
 /*.goButton:active {
     position:relative;

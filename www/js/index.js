@@ -32,7 +32,7 @@ function checkConnection() {
         var networkState = navigator.connection && navigator.connection.type;
 
         setTimeout(function(){
-            networkState = navigator.connection && navigator.connection.type;
+            // networkState = navigator.connection && navigator.connection.type;
 
             // var states = {};
             // states[Connection.UNKNOWN]  = 'Unknown connection';
@@ -56,6 +56,29 @@ function checkConnection() {
 
 function img_on_click() {
 
+    // cordova.require('cordova/plugin/screenorientation').set("landscape");
+
+    var video = document.getElementById("video");
+
+    // doesn't work??
+    alert("1");
+    // set to either landscape
+    alert('Orientation is ' + screen.orientation);
+    alert(screen.width);
+    screen.lockOrientation('landscape');
+    // var so = cordova.plugins.screenorientation;
+    alert("2");
+    so.setOrientation(so.Orientation.LANDSCAPE);
+    alert("set orination to landscape");
+
+    video.addEventListener("playing", function() {
+        alert("event");
+        console.log("event");
+        var so = cordova.plugins.screenorientation;
+        so.setOrientation(so.Orientation.LANDSCAPE);
+    }, false);
+    
+
     checkConnection();
 
     setTimeout(function() {
@@ -75,19 +98,5 @@ function show_video() {
     src=\"http://www.youtube.com/embed/MMC0iaz6bac?autoplay=1&hd=1&rel=0&autohide=1&showinfo=0\"></iframe>";
     youtube_player.style.display = 'initial';
     video_image.style.display = 'none';
-
-    // var video = document.getElementById("video");
-
-    // // doesn't work??
-    // var so = cordova.plugins.screenorientation;
-    // so.setOrientation(so.Orientation.LANDSCAPE);
-    // alert("set orination to landscape");
-
-    // video.addEventListener("playing", function() {
-    //     alert("event");
-    //     console.log("event");
-    //     var so = cordova.plugins.screenorientation;
-    //     so.setOrientation(so.Orientation.LANDSCAPE);
-    // }, false);
 }
 

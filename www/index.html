@@ -11,23 +11,134 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/themes_list.css" />
         <title>ЕГЭ Математика 2015</title>
     </head>
     <body>
         <div class="toolbar">
+            <img class="back" src="img/arrow_back.png" onclick="switch_pages(true)" hidden></img>
             <div class="title">Математика<br>ЕГЭ 2015</div>
         </div>
+        <div class="toolbar_space">
+        </div>
         
-        <img id="video_image" class="video" src="img/start_youtube_img.jpg" onclick="img_on_click()">
-        <div id="youtube_player"></div>
+        <div class="index_page">
+            <img id="video_image" class="video" src="img/start_youtube_img.jpg" onclick="img_on_click()">
+            <div id="youtube_player"></div>
 
-        <button class="goButton" onclick="document.location = 'themes_list.html';">Поехали!</button>
+            <button class="goButton" onclick="switch_pages(false)">Поехали!</button>
 
-        <img class="ruler" src="img/ruler.png"></img>
-        <img class="pencil" src="img/pencil.png"></img>
-        <img class="pen" src="img/pen.png"></img>
+            <img class="ruler" src="img/ruler.png"></img>
+            <img class="pencil" src="img/pencil.png"></img>
+            <img class="pen" src="img/pen.png"></img>            
+        </div>
+
+        <div class="content" hidden>
+            <table class="table" width=100%>
+                <tr class="listitem" onclick="document.location = 'theme.html?theme=0';">
+                    <td class="tasknumber">
+                        B1
+                    </td>
+                    <td class="taskname">
+                        Целые, рациональные и дробные числа
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+                <tr class="listitem" onclick="document.location = 'theme.html?theme=1';">
+                    <td class="tasknumber">
+                        B2
+                    </td>
+                    <td class="taskname">
+                        Проценты
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+                <tr class="listitem" onclick="document.location = 'theme.html?theme=2';">
+                    <td class="tasknumber">
+                        B3
+                    </td>
+                    <td class="taskname">
+                        Графическое представление данных. Анализ данных
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+                <tr class="listitem" onclick="document.location = 'theme.html';">
+                    <td class="tasknumber">
+                        B4
+                    </td>
+                    <td class="taskname">
+                        Табличное представление данных. Прикладные задачи на нахождение наибольшего и наименьшего значения
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+                <tr class="listitem" onclick="document.location = 'theme.html';">
+                    <td class="tasknumber">
+                        B5
+                    </td>
+                    <td class="taskname">
+                        Площадь треугольника, параллелограмма, трапеции, круга, сектора. Декартовы координаты на плоскости
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+                <tr class="listitem" onclick="document.location = 'theme.html';">
+                    <td class="tasknumber">
+                        B6
+                    </td>
+                    <td class="taskname">
+                        Целые, рациональные и дробные числа целые, рациональные и дробные числа
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+                <tr class="listitem" onclick="document.location = 'theme.html';">
+                    <td class="tasknumber">
+                        B7
+                    </td>
+                    <td class="taskname">
+                        Целые, рациональные и дробные числа целые, рациональные и дробные числа
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+                <tr class="listitem" onclick="document.location = 'theme.html';">
+                    <td class="tasknumber">
+                        B8
+                    </td>
+                    <td class="taskname">
+                        Целые, рациональные и дробные числа целые, рациональные и дробные числа
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+                <tr class="listitem" onclick="document.location = 'theme.html';">
+                    <td class="tasknumber">
+                        B9
+                    </td>
+                    <td class="taskname">
+                        Целые, рациональные и дробные числа целые, рациональные и дробные числа
+                    </td>
+                    <td>
+                        <img class="arrowright" src="img/right_arrow.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/themes_list.js"></script>
     </body>
 </html>

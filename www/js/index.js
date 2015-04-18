@@ -2,29 +2,6 @@
  * Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
-// function checkConnection() {
-//     alert("1");
-//     var networkState = navigator.connection.type;
-//     var networkState2;
-//     alert("2 = " + networkState);
-
-//     var states = {};
-//     states[Connection.UNKNOWN]  = 'Unknown connection';
-//     states[Connection.ETHERNET] = 'Ethernet connection';
-//     states[Connection.WIFI]     = 'WiFi connection';
-//     states[Connection.CELL_2G]  = 'Cell 2G connection';
-//     states[Connection.CELL_3G]  = 'Cell 3G connection';
-//     states[Connection.CELL_4G]  = 'Cell 4G connection';
-//     states[Connection.CELL]     = 'Cell generic connection';
-//     states[Connection.NONE]     = 'No network connection';
-
-//     alert('Connection type: ' + states[networkState]);
-// }
-
-// checkConnection();
-
-// document.addEventListener('deviceready', checkConnection, false);
-
 var connection = true
 
 function checkConnection() {
@@ -98,5 +75,20 @@ function show_video() {
     src=\"http://www.youtube.com/embed/MMC0iaz6bac?autoplay=1&hd=1&rel=0&autohide=1&showinfo=0\"></iframe>";
     youtube_player.style.display = 'initial';
     video_image.style.display = 'none';
+}
+
+function switch_pages(to_index) {
+    // alert("0");
+    var index_page = document.getElementsByClassName('index_page')[0];
+    index_page.style.display = to_index ? 'inherit' : 'none';
+
+    var content = document.getElementsByClassName('content')[0];
+    content.style.display = !to_index ? 'inherit' : 'none';
+
+    document.body.style.backgroundImage = to_index ? 'url(../img/back_squared.png)' : 'none';
+    // alert("1");
+
+    var back = document.getElementsByClassName('back')[0];
+    back.style.display = !to_index ? 'inherit' : 'none';
 }
 

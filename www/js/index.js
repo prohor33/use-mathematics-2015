@@ -112,7 +112,9 @@ function switch_pages(to_index) {
     document.body.style.overflow = to_index ? "hidden" : "inherit";
     var htmlElement = document.getElementsByTagName("html")[0];
     // doesn't work???
-    htmlElement.style.overflow = to_index ? "hidden" : "inherit";
+    // alert(htmlElement);
+    // htmlElement.style.overflow = to_index ? "hidden" : "inherit";
+    alert(htmlElement.style.overflow);
 
     var back = document.getElementsByClassName('back')[0];
     back.style.display = !to_index ? 'inherit' : 'none';

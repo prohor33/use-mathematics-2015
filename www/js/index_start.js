@@ -15,7 +15,7 @@ function on_load() {
     // alert("0");
     if (load_index) {
         document.write('<style>.theme_list_page { display: none; }\nbody { background-image: url("img/back_squared.png");\noverflow: hidden; }\n\
-            html { overflow: hidden; }</style>');
+            html { overflow: inherit; }</style>');
     } else {
         document.write('<style>.index_page { display: none; }</style>');
     }

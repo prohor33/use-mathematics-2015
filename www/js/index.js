@@ -107,14 +107,9 @@ function switch_pages(to_index) {
         elements[i].style.display = !to_index ? 'inherit' : 'none';
     }
 
-    document.body.style.backgroundImage = to_index ? 'url(img/back_squared.png)' : 'none';
-    // alert("0");
-    document.body.style.overflow = to_index ? "hidden" : "inherit";
-    var htmlElement = document.getElementsByTagName("html")[0];
-    // doesn't work???
-    // alert(htmlElement);
-    // htmlElement.style.overflow = to_index ? "hidden" : "inherit";
-    alert(htmlElement.style.overflow);
+    document.body.style.backgroundImage = to_index ? '' : 'none';
+    document.body.style.overflow = to_index ? "hidden" : "visible";
+    document.documentElement.style.overflow = to_index ? "hidden" : "visible";
 
     var back = document.getElementsByClassName('back')[0];
     back.style.display = !to_index ? 'inherit' : 'none';

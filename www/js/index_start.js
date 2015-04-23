@@ -9,13 +9,13 @@ function on_load() {
 
     var result = parse("theme_list_page");
     // uncomment
-    if (result != "Not found")
-        load_index = false;
+    // if (result != "Not found")
+    //     load_index = false;
 
     // alert("0");
     if (load_index) {
         document.write('<style>.theme_list_page { display: none; }\nbody { background-image: url("img/back_squared.png");\noverflow: hidden; }\n\
-            html { overflow: inherit; }</style>');
+            html { overflow: hidden; }</style>');
     } else {
         document.write('<style>.index_page { display: none; }</style>');
     }

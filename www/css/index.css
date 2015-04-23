@@ -10,11 +10,12 @@ body {
     background-size: 30% auto;
     z-index: -2;
     /* Prevent scrolling */
-    /* Settings in from js */
+    /* Setting it from js */
     /*overflow: hidden;*/
+    /*background-image: url("../img/back_squared.png");*/
 }
 
-html { overflow: hidden; }
+/*html { overflow: hidden; }*/
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {

@@ -9,8 +9,8 @@ function on_load() {
 
     var result = parse("theme_list_page");
     // uncomment
-    // if (result != "Not found")
-    //     load_index = false;
+    if (result != "Not found")
+        load_index = false;
 
     // alert("0");
     if (load_index) {

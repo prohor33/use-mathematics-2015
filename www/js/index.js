@@ -111,7 +111,13 @@ function switch_pages(to_index) {
     document.body.style.overflow = to_index ? "hidden" : "visible";
     document.documentElement.style.overflow = to_index ? "hidden" : "visible";
 
+    // doesn't work! (bug #10 background scrolling)
+    if (to_index)
+        window.scrollTop = 0;
+
     var back = document.getElementsByClassName('back')[0];
     back.style.display = !to_index ? 'inherit' : 'none';
+
+    // alert("ok");
 }
 

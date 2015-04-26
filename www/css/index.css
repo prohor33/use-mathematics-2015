@@ -10,12 +10,11 @@ body {
     background-size: 30% auto;
     z-index: -2;
     /* Prevent scrolling */
-    /* Setting it from js */
-    /*overflow: hidden;*/
-    /*background-image: url("../img/back_squared.png");*/
+    overflow: hidden;
+    background-image: url("../img/back_squared.png");
 }
 
-/*html { overflow: hidden; }*/
+html { overflow: hidden; }
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -109,14 +108,19 @@ body {
     display: none;
 }
 
-#index_title {
+.title {
     font-size: 180%;
 }
 
-#index_toolbar {
+.toolbar {
     height: 12%;
 }
 
-/*.index_page { display: none; }*/
-/*.theme_list_page { display: none; }*/
-/*body { background-image: url("../img/back_squared.png"); }*/
+.toolbar_space {
+    height: 12%;
+}
+
+.content {
+    min-height: 0%;
+}
+

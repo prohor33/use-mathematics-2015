@@ -21,6 +21,12 @@
     text-transform: none;
 }
 
+.task_image {
+    max-width: 90%;
+    padding: 15px;
+    margin-top: 5%;
+}
+
 img.formula {
     position: absolute;
     top: 19%;

@@ -142,6 +142,13 @@ img.formula:active {
     padding: 10px;
     margin-top: 10px;
     font-size:20px;
+
+    /* set it from js */
+    /*background: url(../img/accepted.png);*/
+    /*background-repeat: no-repeat;*/
+    /*padding-left: 30px;*/
+    /*background-position: 98%;*/
+    /*background-size: 30px 30px;*/
 }
 #form-field:focus {
    background: #fff;

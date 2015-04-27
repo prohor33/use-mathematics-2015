@@ -73,8 +73,16 @@ function try_to_answer() {
     // edit_field.style.borderWidth = "medium";
 
     if (right)
-        alert("Ответ верный!");
+        right_answer();
 
     toggle_animation(right);
+}
+
+function right_answer() {
+    alert("Ответ верный!");
+    edit_field.style.background = 'url(../img/accepted.png)';
+    edit_field.style.backgroundRepeat = 'no-repeat';
+    edit_field.style.backgroundSize = '30px 30px';
+    edit_field.style.backgroundPosition = '98%';
 }
 

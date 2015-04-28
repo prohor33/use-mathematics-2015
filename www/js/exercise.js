@@ -2,22 +2,33 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
- var current_task = 0
- var max_task = 5
+ var current_task = 0;
+ var max_task = 5;
+
+var theme_key = document.getElementsByClassName("title")[0].innerHTML;
 
 function next_task() {
     var task_was = current_task;
     if (current_task < max_task - 1)
         current_task++;
 
-    update_task(task_was);
+    switch_task(task_was);
 }
 function prev_task() {
     var task_was = current_task;
     if (current_task > 0)
         current_task--;
 
+    switch_task(task_was);
+}
+
+function switch_task(task_was) {
     update_task(task_was);
+    update_accepted();
+
+    // save curr task number
+    var curr_task_key = theme_key + "_" + "curr_task";
+    localStorage.setItem(curr_task_key, current_task);
 }
 
 var edit_field = document.getElementById("form-field");
@@ -72,17 +83,55 @@ function try_to_answer() {
     // edit_field.style.borderColor = color;
     // edit_field.style.borderWidth = "medium";
 
-    if (right)
-        right_answer();
+    right ? right_answer() : wrong_answer();
 
     toggle_animation(right);
 }
 
 function right_answer() {
+    var state_key = theme_key + "_" + current_task + "_state";
+    localStorage.setItem(state_key, "accepted");
     alert("Ответ верный!");
+    show_accepted();
+}
+function wrong_answer() {
+    var state_key = theme_key + "_" + current_task + "_state";
+    localStorage.setItem(state_key, "wrong");
+    edit_field.style.background = '';
+}
+
+function show_accepted() {
     edit_field.style.background = 'url(../img/accepted.png)';
     edit_field.style.backgroundRepeat = 'no-repeat';
     edit_field.style.backgroundSize = '30px 30px';
     edit_field.style.backgroundPosition = '98%';
+}
+
+function update_accepted() {
+    var state_key = theme_key + "_" + current_task + "_state";
+    var state = localStorage.getItem(state_key);
+    // alert(state_key + " = " + state);
+    if (state == "accepted") {
+        show_accepted();
+    } else {
+        edit_field.style.background = '';
+    }
+}
+
+on_start();
+function on_start() {
+    var curr_task_key = theme_key + "_" + "curr_task";
+    current_task = localStorage.getItem(curr_task_key);
+    // alert(curr_task_key + " = " + current_task);
+    if (current_task == null) {
+        current_task = 0;
+    } else {
+        current_task = parseInt(current_task);
+        // alert(typeof(current_task));
+        if (current_task != 0)
+            switch_task(0);
+    }
+
+    update_accepted();
 }
 

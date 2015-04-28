@@ -48,6 +48,8 @@ function update_task(task_was) {
 
 function show_answer() {
     edit_field.value = document.getElementsByClassName("answer")[current_task].innerHTML;
+    var state_key = theme_key + "_" + current_task + "_state";
+    localStorage.setItem(state_key, "answer_was_shown");
 }
 
 // apply all webkit events
@@ -90,9 +92,15 @@ function try_to_answer() {
 
 function right_answer() {
     var state_key = theme_key + "_" + current_task + "_state";
-    localStorage.setItem(state_key, "accepted");
+
+    var state = localStorage.getItem(state_key);
+    var answer_already_shown = state == "answer_was_shown";
+
+    if (!answer_already_shown) {
+        localStorage.setItem(state_key, "accepted");
+        show_accepted();
+    }
     alert("Ответ верный!");
-    show_accepted();
 }
 function wrong_answer() {
     var state_key = theme_key + "_" + current_task + "_state";

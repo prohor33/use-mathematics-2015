@@ -27,8 +27,7 @@ function switch_task(task_was) {
     update_accepted();
 
     // save curr task number
-    var curr_task_key = theme_key + "_" + "curr_task";
-    localStorage.setItem(curr_task_key, current_task);
+    put_current_task();
 }
 
 var edit_field = document.getElementById("form-field");
@@ -48,8 +47,8 @@ function update_task(task_was) {
 
 function show_answer() {
     edit_field.value = document.getElementsByClassName("answer")[current_task].innerHTML;
-    var state_key = theme_key + "_" + current_task + "_state";
-    localStorage.setItem(state_key, "answer_was_shown");
+    if (!is_task_accepted())
+        put_task_failed();
 }
 
 // apply all webkit events
@@ -91,20 +90,13 @@ function try_to_answer() {
 }
 
 function right_answer() {
-    var state_key = theme_key + "_" + current_task + "_state";
-
-    var state = localStorage.getItem(state_key);
-    var answer_already_shown = state == "answer_was_shown";
-
-    if (!answer_already_shown) {
-        localStorage.setItem(state_key, "accepted");
+    if (!is_task_failed()) {
+        put_task_accepted();
         show_accepted();
     }
     alert("Ответ верный!");
 }
 function wrong_answer() {
-    var state_key = theme_key + "_" + current_task + "_state";
-    localStorage.setItem(state_key, "wrong");
     edit_field.style.background = '';
 }
 
@@ -116,11 +108,7 @@ function show_accepted() {
 }
 
 function update_accepted() {
-    var state_key = theme_key + "_" + current_task + "_state";
-    var state = localStorage.getItem(state_key);
-    // alert(state_key + " = " + state);
-    alert("Иди в ванну!");
-    if (state == "accepted") {
+    if (is_task_accepted()) {
         show_accepted();
     } else {
         edit_field.style.background = '';
@@ -129,18 +117,49 @@ function update_accepted() {
 
 on_start();
 function on_start() {
-    var curr_task_key = theme_key + "_" + "curr_task";
-    current_task = localStorage.getItem(curr_task_key);
-    // alert(curr_task_key + " = " + current_task);
-    if (current_task == null) {
+    current_task = get_current_task();
+    if (current_task < 0) {
         current_task = 0;
     } else {
-        current_task = parseInt(current_task);
-        // alert(typeof(current_task));
         if (current_task != 0)
             switch_task(0);
     }
-
     update_accepted();
+}
+
+function put_task_accepted() {
+    put_task_state("accepted");
+}
+function put_task_failed() {
+    put_task_state("answer_was_shown");
+}
+function is_task_accepted() {
+    return get_task_state() == "accepted";
+}
+function is_task_failed() {
+    return get_task_state() == "answer_was_shown";
+}
+function get_task_state() {
+    var state_key = theme_key + "_" + current_task + "_state";
+    var state = localStorage.getItem(state_key);
+    // alert(state_key + " = " + state);
+    return state;
+}
+function put_task_state(state) {
+    var state_key = theme_key + "_" + current_task + "_state";
+    localStorage.setItem(state_key, state);
+}
+
+function put_current_task() {
+    var curr_task_key = theme_key + "_" + "curr_task";
+    localStorage.setItem(curr_task_key, current_task);
+}
+function get_current_task() {
+    var curr_task_key = theme_key + "_" + "curr_task";
+    var res = localStorage.getItem(curr_task_key);
+    // alert(curr_task_key + " = " + res);
+    if (res == null)
+        return -1;
+    return parseInt(res);
 }
 

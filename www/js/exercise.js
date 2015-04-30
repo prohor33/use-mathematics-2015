@@ -33,7 +33,7 @@ function switch_task(task_was) {
 var edit_field = document.getElementById("form-field");
 
 function update_task(task_was) {
-    var tasks = document.getElementsByClassName("text");
+    var tasks = document.getElementsByClassName("task");
 
     tasks[task_was].style.display = "none";
     tasks[current_task].style.display = "inherit";

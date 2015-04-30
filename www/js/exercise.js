@@ -111,7 +111,7 @@ function wrong_answer() {
 function show_accepted() {
     edit_field.style.background = 'url(../img/accepted.png)';
     edit_field.style.backgroundRepeat = 'no-repeat';
-    edit_field.style.backgroundSize = '30px 30px';
+    edit_field.style.backgroundSize = '35px 35px';
     edit_field.style.backgroundPosition = '98%';
 }
 
@@ -119,6 +119,7 @@ function update_accepted() {
     var state_key = theme_key + "_" + current_task + "_state";
     var state = localStorage.getItem(state_key);
     // alert(state_key + " = " + state);
+    alert("Иди в ванну!");
     if (state == "accepted") {
         show_accepted();
     } else {

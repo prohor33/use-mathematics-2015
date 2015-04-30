@@ -29,10 +29,10 @@
 
 img.formula {
     position: absolute;
-    top: 19%;
+    top: 21%;
     right: 10px;
     width: auto;
-    height: 62%;
+    height: 58%;
 }
 img.formula:active {
     opacity: .5;

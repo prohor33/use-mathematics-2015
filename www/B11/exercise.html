@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/exercise.css" />
+        <title>Задачи</title>
+    </head>
+    <body>
+        <div class="toolbar">
+            <img class="back" src="../img/arrow_back.png" onclick="toolbar.onBack()"></img>
+            <div class="title">Задание 11</div>
+            <img class="formula" src="../img/theory_button.png" onclick="document.location = 'formulas.html';"></img>
+        </div>
+        <div class="toolbar_space">
+        </div>
+
+        <div class="content">
+
+            <!-- 1 -->
+            <div class="task">
+                <p class="text">
+                    Зависимость объёма спроса q(единиц в месяц) на продукцию предприятия-монополиста от цены p (тыс. руб.) задаётся формулой q = 100 − 10 p . Выручка предприятия за месяц r (в тыс. руб.) вычисляется по формуле r(p)= q ⋅ p . Определите наибольшую цену p, при которой месячная выручка r(p) составит не менее 240 тыс. руб. Ответ приведите в тыс. руб.
+                </p>
+                <p class="answer" hidden>6</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Для определения эффективной температуры звезд используют закон Стефана–Больцмана, согласно которому мощность излучения нагретого тела P, измеряемая в ваттах, прямо пропорциональна площади его поверхности и четвертой степени температуры: P = σST 4 , где σ = 5,7 ⋅10−8 – постоянная, площадь S измеряется в квадратных метрах, а температура T – в градусах Кельвина. Известно, что некоторая звезда имеет площадь S =(1/16)⋅1020 м2, а излучаемая ею мощность P не менее 9,12⋅1025 Вт. Определите наименьшую возможную температуру этой звезды. Приведите ответ в градусах Кельвина.
+                </p>
+                <img class="task_image" id="task0" src="../img/tasks/B11/2.png"></img>
+                <p class="answer" hidden>4000</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Коэффициент полезного действия (КПД) кормозапарника равен отношению количества теплоты, затраченного на нагревание воды массой mB (в килограммах) от температуры t1 до температуры t2 (в градусах Цельсия) к количеству теплоты, полученному от сжигания дров массы mдр кг. Он определяется формулой <img class="text_image" id="task0" src="../img/tasks/B11/3.png"></img> где cB =4,2⋅103Дж/(кг∙К)– теплоёмкость воды, qдр =8,3⋅106Дж/кг– qдрmдр удельная теплота сгорания дров. Определите наименьшее количество дров, которое понадобится сжечь в кормозапарнике, чтобы нагреть m = 83 кг воды от 10 C до кипения, если известно, что КПД кормозапарника не больше 21%. Ответ выразите в килограммах.
+                </p>
+                <p class="answer" hidden>18</p>
+            </div>
+
+            <!-- 4 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Водолазный колокол, содержащий в начальный момент времени υ = 3 моля воздуха объемом V1 = 8л, медленно опускают на дно водоема. При этом происходит изотермическое сжатие воздуха до конечного объeма V2. Работа, совершаемая водой при сжатии воздуха, определяется выражением <img class="text_image" id="task0" src="../img/tasks/B11/4.png"></img> (Дж), где α = 5,75 постоянная, а T= 300 К − температура воздуха. Какой объем V2 (в литрах) станет занимать воздух, если при сжатии газа была совершена работа в 10350 Дж?
+                <p class="answer" hidden>2</p>
+            </div>
+
+            <!-- 5 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Независимое агентство намерено ввести рейтинг новостных интернет-изданий на основе оценок информативности In, оперативности Op, объективности публикаций Tr, а также качества сайта Q. Каждый отдельный показатель оценивается читателями по 5-балльной шкале целыми числами от 1 до 5. Аналитики, составляющие формулу рейтинга, считают, что объективность ценится втрое, а информативность публикаций − вдвое дороже, чем оперативность и качество сайта. Таким образом, формула приняла вид
+                    <img class="text_image" id="task0" src="../img/tasks/B11/5.png"></img>
+                    <br>
+                    Каким должно быть число A, чтобы издание, у которого все оценки наибольшие, получило бы рейтинг 1?
+                </p>
+                
+                <p class="answer" hidden>35</p>
+            </div>
+
+            <input id="form-field" type="text" name="email" />
+            <a href="#" class="answer_button" onclick="try_to_answer()">Ответить</a>
+            <a href="#" class="answer_button" id="show_answer_button" onclick="show_answer()">Показать ответ</a>
+        </div>
+
+        <div class="bottom_panel">
+            <div class="bottom_panel_title">Вариант 1 из 5</div>
+            <img class="task_arrow" id="task_arrow_right" src="../img/arrow_right_tasks.png" onclick="next_task()"></img>
+            <img class="task_arrow" id="task_arrow_left" src="../img/arrow_left_tasks.png" onclick="prev_task()"></img>
+        </div>
+        <div class="bottom_panel_space">
+        </div>
+
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/exercise.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/exercise.css" />
+        <title>Задачи</title>
+    </head>
+    <body>
+        <div class="toolbar">
+            <img class="back" src="../img/arrow_back.png" onclick="toolbar.onBack()"></img>
+            <div class="title">Задание 12</div>
+            <img class="formula" src="../img/theory_button.png" onclick="document.location = 'formulas.html';"></img>
+        </div>
+        <div class="toolbar_space">
+        </div>
+
+        <div class="content">
+
+            <!-- 1 -->
+            <div class="task">
+                <p class="text">
+                    Стороны основания правильной четырехугольной пирамиды равны 10, боковые ребра равны 13. Найдите площадь поверхности этой пирамиды.
+                </p>
+                <img class="task_image" id="task0" src="../img/tasks/B12/1.png"></img>
+                <p class="answer" hidden>340</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Через среднюю линию основания треугольной призмы, площадь боковой поверхности которой равна 24, проведена плоскость, параллельная боковому ребру. Найдите площадь боковой поверхности отсеченной треугольной призмы.
+                </p>
+                <img class="task_image" id="task0" src="../img/tasks/B12/2.jpg"></img>
+                <p class="answer" hidden>12</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Найдите площадь поверхности правильной четырехугольной пирамиды, стороны основания которой равны 6 и высота равна 4.
+                </p>
+                <img class="task_image" id="task0" src="../img/tasks/B12/3.png"></img>
+                <p class="answer" hidden>96</p>
+            </div>
+
+            <!-- 4 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Объем правильной шестиугольной пирамиды 6. Сторона основания равна 1. Найдите боковое ребро.
+                <img class="task_image" id="task0" src="../img/tasks/B12/4.png"></img>
+                <p class="answer" hidden>7</p>
+            </div>
+
+            <!-- 5 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Площадь основания конуса равна 18. Плоскость, параллельная плоскости основания конуса, делит его высоту на отрезки длиной 3 и 6, считая от вершины. Найдите площадь сечения конуса этой плоскостью.
+                </p>
+                <img class="task_image" id="task0" src="../img/tasks/B12/5.png"></img>
+                <p class="answer" hidden>2</p>
+            </div>
+
+            <input id="form-field" type="text" name="email" />
+            <a href="#" class="answer_button" onclick="try_to_answer()">Ответить</a>
+            <a href="#" class="answer_button" id="show_answer_button" onclick="show_answer()">Показать ответ</a>
+        </div>
+
+        <div class="bottom_panel">
+            <div class="bottom_panel_title">Вариант 1 из 5</div>
+            <img class="task_arrow" id="task_arrow_right" src="../img/arrow_right_tasks.png" onclick="next_task()"></img>
+            <img class="task_arrow" id="task_arrow_left" src="../img/arrow_left_tasks.png" onclick="prev_task()"></img>
+        </div>
+        <div class="bottom_panel_space">
+        </div>
+
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/exercise.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

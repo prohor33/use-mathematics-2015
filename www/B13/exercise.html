@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/exercise.css" />
+        <title>Задачи</title>
+    </head>
+    <body>
+        <div class="toolbar">
+            <img class="back" src="../img/arrow_back.png" onclick="toolbar.onBack()"></img>
+            <div class="title">Задание 13</div>
+            <img class="formula" src="../img/theory_button.png" onclick="document.location = 'formulas.html';"></img>
+        </div>
+        <div class="toolbar_space">
+        </div>
+
+        <div class="content">
+
+            <!-- 1 -->
+            <div class="task">
+                <p class="text">
+                    Из пункта А в пункт В, расстояние между которыми 75 км, одновременно выехали автомобилист и велосипедист. Известно, что за час автомобилист проезжает на 40 км больше, чем велосипедист. Определите скорость велосипедиста, если известно, что он прибыл в пункт В на 6 часов позже автомобилиста. Ответ дайте в км/ч.
+                </p>
+                <p class="answer" hidden>10</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Моторная лодка в 10:00 вышла из пункта А в пункт В, расположенный в 30 км от А. Пробыв в пункте В 2 часа 30 минут, лодка отправилась назад и вернулась в пункт А в 18:00 того же дня. Определите (в км/ч) собственную скорость лодки, если известно, что скорость течения реки 1 км/ч.
+                </p>
+                <p class="answer" hidden>11</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="task" hidden>
+                <p class="text">
+                    На изготовление 475 деталей первый рабочий тратит на 6 часов меньше, чем второй рабочий на изготовление 550 таких же деталей. Известно, что первый рабочий за час делает на 3 детали больше, чем второй. Сколько деталей в час делает первый рабочий?
+                </p>
+                <p class="answer" hidden>25</p>
+            </div>
+
+            <!-- 4 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Смешав 30-процентный и 60-процентный растворы кислоты и добавив 10 кг чистой воды, получили 36- процентный раствор кислоты. Если бы вместо 10 кг воды добавили 10 кг 50-процентного раствора той же кислоты, то получили бы 41-процентный раствор кислоты. Сколько килограммов 30-процентного раствора использовали для получения смеси?
+                <p class="answer" hidden>60</p>
+            </div>
+
+            <!-- 5 -->
+            <div class="task" hidden>
+                <p class="text">
+                    Вере надо подписать 640 открыток. Ежедневно она подписывает на одно и то же количество открыток больше по сравнению с предыдущим днем. Известно, что за первый день Вера подписала 10 открыток. Определите, сколько открыток было подписано за четвертый день, если вся работа была выполнена за 16 дней.
+                </p>
+                <p class="answer" hidden>22</p>
+            </div>
+
+            <input id="form-field" type="text" name="email" />
+            <a href="#" class="answer_button" onclick="try_to_answer()">Ответить</a>
+            <a href="#" class="answer_button" id="show_answer_button" onclick="show_answer()">Показать ответ</a>
+        </div>
+
+        <div class="bottom_panel">
+            <div class="bottom_panel_title">Вариант 1 из 5</div>
+            <img class="task_arrow" id="task_arrow_right" src="../img/arrow_right_tasks.png" onclick="next_task()"></img>
+            <img class="task_arrow" id="task_arrow_left" src="../img/arrow_left_tasks.png" onclick="prev_task()"></img>
+        </div>
+        <div class="bottom_panel_space">
+        </div>
+
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/exercise.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

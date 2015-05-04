@@ -28,6 +28,11 @@
     margin-right: auto;
 }
 
+.text_image {
+    height: 2.3em;
+    vertical-align:middle;
+}
+
 img.formula {
     position: absolute;
     top: 21%;

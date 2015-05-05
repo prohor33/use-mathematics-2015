@@ -46,12 +46,20 @@ h1 {
     text-decoration:none;
     font-weight: bold;
     text-transform: none;
-    padding: 8px;
+    padding-right: 8px;
+    padding-left: 0;
     color: #545454;
+}
+.taskname_faded {
+    color: #AAAAAA;
 }
 
 .arrowright {
     margin-right: 10px;
+}
+.lock {
+    width: 26px;
+    margin-left: -18px;
 }
 
 .table {

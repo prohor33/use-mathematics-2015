@@ -235,3 +235,14 @@ img.formula:active {
     font-size: 150%;
 }
 
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .bottom_panel {
+        height: 13%;
+        top: 87%;
+    }
+    .bottom_panel_space {
+        height: 13%;
+    }
+}
+

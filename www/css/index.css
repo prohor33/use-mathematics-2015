@@ -16,13 +16,6 @@ body {
 
 html { overflow: hidden; }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position: left center;
-    }
-}
-
 .goButton {
     -moz-box-shadow: 0px 1px 0px 0px #fff6af;
     -webkit-box-shadow: 0px 1px 0px 0px #fff6af;
@@ -124,3 +117,38 @@ html { overflow: hidden; }
     min-height: 0%;
 }
 
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .toolbar {
+        height: 17%;
+    }
+    .toolbar_space {
+        height: 17%;
+    }
+    .goButton {
+        width: 30%;
+        left: 35%;
+        height: 12%;
+        top: 82%;
+    }
+    .video {
+        top: 22%;
+        width: 40%;
+        height: 54%;
+    }
+    .pen {
+        width: 15%;
+        left: -10%;
+        bottom: 75%;
+    }
+    .ruler {
+        width: 15%;
+        left: -15%;
+        bottom: 35%;
+    }
+    .pencil {
+        width: 15%;
+        right: 5%;
+        bottom: 7%;
+    }
+}

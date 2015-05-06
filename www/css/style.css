@@ -74,3 +74,13 @@ img.back:active {
     padding: 0px;
     margin: 0px;
 }
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .toolbar {
+        height: 15%;
+    }
+    .toolbar_space {
+        height: 15%;
+    }
+}

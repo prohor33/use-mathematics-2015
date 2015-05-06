@@ -83,3 +83,15 @@ h1 {
 .content {
     min-height: 90%;
 }
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .text {
+        margin: 30px;
+    }
+    #video_container {
+        width: 45%;
+        height: 220px;
+        margin-top: 10px;
+    }
+}

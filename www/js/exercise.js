@@ -6,6 +6,7 @@
  var max_task = 5;
 
 var theme_key = document.getElementsByClassName("title")[0].innerHTML;
+var showing_answer = false;
 
 function next_task() {
     var task_was = current_task;
@@ -47,8 +48,11 @@ function update_task(task_was) {
 
 function show_answer() {
     edit_field.value = document.getElementsByClassName("answer")[current_task].innerHTML;
-    if (!is_task_accepted())
-        put_task_failed();
+    showing_answer = true;
+    setTimeout(function() {
+        showing_answer = false;
+        edit_field.value = "";
+    }, 2000);
 }
 
 // apply all webkit events
@@ -75,6 +79,10 @@ function toggle_animation(right) {
 };
 
 function try_to_answer() {
+    if (showing_answer) {
+        alert("Эй, так не честно!");
+        return;
+    }
     var right = edit_field.value == document.getElementsByClassName("answer")[current_task].innerHTML;
 
     // var color = "red";
@@ -90,11 +98,9 @@ function try_to_answer() {
 }
 
 function right_answer() {
-    if (!is_task_failed()) {
-        put_task_accepted();
-        show_accepted();
-    }
-    alert("Ответ верный!");
+    put_task_accepted();
+    show_accepted();
+    alert("Правильно!");
 }
 function wrong_answer() {
     edit_field.style.background = '';
@@ -130,14 +136,8 @@ function on_start() {
 function put_task_accepted() {
     put_task_state("accepted");
 }
-function put_task_failed() {
-    put_task_state("answer_was_shown");
-}
 function is_task_accepted() {
     return get_task_state() == "accepted";
-}
-function is_task_failed() {
-    return get_task_state() == "answer_was_shown";
 }
 function get_task_state() {
     var state_key = theme_key + "_" + current_task + "_state";

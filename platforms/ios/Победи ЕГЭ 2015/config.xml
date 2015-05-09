@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="crystal.tech.use_mathematics" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="crystal.tech.defeat_use" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="false" />
@@ -20,7 +20,7 @@
     <feature name="NetworkStatus">
         <param name="ios-package" value="CDVConnection" />
     </feature>
-    <name>Математика ЕГЭ 2015</name>
+    <name>Победи ЕГЭ 2015</name>
     <description>
         Приложение поможет подготовится к ЕГЭ по математике
     </description>
@@ -40,7 +40,7 @@
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="auto-hide-splash-screen" value="true" />
     <preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="10" />
+    <preference name="android-minSdkVersion" value="11" />
     <preference name="android-installLocation" value="auto" />
     <gap:plugin name="org.apache.cordova.battery-status" />
     <gap:plugin name="org.apache.cordova.camera" />
@@ -60,6 +60,9 @@
     <gap:plugin name="org.apache.cordova.network-information" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.vibration" />
+    <gap:plugin name="com.smartmobilesoftware.inappbilling">
+        <param name="BILLING_KEY" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoR4C8RVtUq4mcnfiC7KBxAb3aDvZEoriVr8UYSq8Qz7ApkSXX+/0wGX8MSLl7IZiACZIP7UNGYHxR+ac6Ti/Osm0QqzSPCE5c9kaTotlfMlJdGsHU114hf+50pbCi48cYGmuRBGxs483bKzFJTUQpyoNwZrSW7HL7a+DTB5u4tymkCwxYLUoQ+493DyQ3qW2W1bUjnCyiwGqlVnZFdMxCXRJrC+Iox8LSs784r/OBAg2InNZRywt3/YSsthJmEaK3QDV6USYWHEMBCeqXpLa6ZCjJ5NjmhVLGykT646B5g/SkfxunQYCC7lEjTp9QM0LIjBsYsD4myZOTd4fzis9OQIDAQAB" />
+    </gap:plugin>
     <icon src="www/icon.png" />
     <access origin="*" />
 </widget>

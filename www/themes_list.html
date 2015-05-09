@@ -205,7 +205,7 @@
                         <img class="arrowright" src="img/right_arrow.png">
                     </td>
                 </tr>
-                <tr class="listitem" onclick="locked();">
+                <tr class="listitem" onclick="app.purchase();">
                     <td class="tasknumber">
                         15
                     </td>
@@ -265,12 +265,8 @@
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>
-        <!-- <script type="text/javascript" charset="utf-8" src="plugins/com.smartmobilesoftware.androidinappbilling/www/inappbilling.js"></script> -->
-        <script type="text/javascript" charset="utf-8" src="inappbilling.js"></script>
         <script type="text/javascript" src="js/script.js"></script>
         <script type="text/javascript" src="js/themes_list.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+        <script type="text/javascript" src="js/billing.js"></script>
     </body>
 </html>

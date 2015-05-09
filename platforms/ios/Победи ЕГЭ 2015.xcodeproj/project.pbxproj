@@ -43,6 +43,9 @@
 		BDA69F4CBBB74659A22FA300 /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 393625550FD34C8BA8E8C0F6 /* CDVConnection.m */; };
 		AB167FD57B4F48B5B0A0F2BD /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1D9AA350164ED882B78222 /* CDVReachability.m */; };
 		D2A89893A57A4DC7A88049F7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD4249407D04B04A2213E10 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6DAF8353FCFA4AAD9E5DEC78 /* InAppPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = B10D484D4D62437C821A6760 /* InAppPurchase.m */; };
+		8DF5E0A95CA7435D8E9A7D7B /* SKProduct+LocalizedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = D5586CAE2B584B7498BC0B65 /* SKProduct+LocalizedPrice.m */; };
+		58166DD03B8D445AB5C4296B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE25A24B92840389ACD183D /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,11 @@
 		5FC73C535C7A4AEFAD9EC201 /* CDVConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVConnection.h"; path = "org.apache.cordova.network-information/CDVConnection.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		A5655620ACB14F9E91AAED79 /* CDVReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVReachability.h"; path = "org.apache.cordova.network-information/CDVReachability.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		5DD4249407D04B04A2213E10 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		B10D484D4D62437C821A6760 /* InAppPurchase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "InAppPurchase.m"; path = "cc.fovea.cordova.purchase/InAppPurchase.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		D5586CAE2B584B7498BC0B65 /* SKProduct+LocalizedPrice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SKProduct+LocalizedPrice.m"; path = "cc.fovea.cordova.purchase/SKProduct+LocalizedPrice.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		840C46D7837A4FD1B61BB04E /* InAppPurchase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "InAppPurchase.h"; path = "cc.fovea.cordova.purchase/InAppPurchase.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		7D89D3EF2516475380BA9C66 /* SKProduct+LocalizedPrice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SKProduct+LocalizedPrice.h"; path = "cc.fovea.cordova.purchase/SKProduct+LocalizedPrice.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		7FE25A24B92840389ACD183D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "StoreKit.framework"; path = "System/Library/Frameworks/StoreKit.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +135,7 @@
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				D2A89893A57A4DC7A88049F7 /* SystemConfiguration.framework in Frameworks */,
+				58166DD03B8D445AB5C4296B /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +209,7 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				5DD4249407D04B04A2213E10 /* SystemConfiguration.framework */,
+				7FE25A24B92840389ACD183D /* StoreKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,6 +231,10 @@
 				6D1D9AA350164ED882B78222 /* CDVReachability.m */,
 				5FC73C535C7A4AEFAD9EC201 /* CDVConnection.h */,
 				A5655620ACB14F9E91AAED79 /* CDVReachability.h */,
+				B10D484D4D62437C821A6760 /* InAppPurchase.m */,
+				D5586CAE2B584B7498BC0B65 /* SKProduct+LocalizedPrice.m */,
+				840C46D7837A4FD1B61BB04E /* InAppPurchase.h */,
+				7D89D3EF2516475380BA9C66 /* SKProduct+LocalizedPrice.h */,
 			);
 			name = Plugins;
 			path = "Победи ЕГЭ 2015/Plugins";
@@ -408,6 +422,8 @@
 				FC3DA0A4506348CA8D73D9D2 /* YoikScreenOrientation.m in Sources */,
 				BDA69F4CBBB74659A22FA300 /* CDVConnection.m in Sources */,
 				AB167FD57B4F48B5B0A0F2BD /* CDVReachability.m in Sources */,
+				6DAF8353FCFA4AAD9E5DEC78 /* InAppPurchase.m in Sources */,
+				8DF5E0A95CA7435D8E9A7D7B /* SKProduct+LocalizedPrice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -51,4 +51,5 @@ platforms/ios/www/*
 
 # temporary
 platforms/android/*
+platforms/ios/*
 plugins/*

@@ -2,42 +2,59 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
-// // We must wait for the "deviceready" event to fire
-// // before we can use the store object.
-// document.addEventListener('deviceready', initializeStore, false);
+function render_themes_state() {
+	  var res = localStorage.getItem("full_version_product_state");
+	  var full_version = res == "owned";
+	  // full_version = true;
 
-// function initializeStore() {
-// 		alert("initializeStore");
+	  var images = document.getElementsByClassName("theme_img");
+	  var task_names = document.getElementsByClassName("taskname");
+	  // alert(images);
 
-//     // Let's set a pretty high verbosity level, so that we see a lot of stuff
-//     // in the console (reassuring us that something is happening).
-//     store.verbosity = store.INFO;
-//     alert("1");
+	  // actually 19, withouy 18's
+	  for (var i = 1; i <= 18; i++) {
 
-//     // We register a dummy product. It's ok, it shouldn't
-//     // prevent the store "ready" event from firing.
-//     store.register({
-//         id:    "com.example.app.inappid1",
-//         alias: "100 coins",
-//         type:  store.CONSUMABLE
-//     });
-//     alert("2");
+	  		var img_el = images[i - 1];
+	  		var task_name = task_names[i -1];
 
-//     // When every goes as expected, it's time to celebrate!
-//     // The "ready" event should be welcomed with music and fireworks,
-//     // go ask your boss about it! (just in case)
-//     store.ready(function() {
-//         console.log("\\o/ STORE READY \\o/");
-//     });
-//     alert("3");
+	  		if (i == 18)
+	  			i = 19;	// it's actually 19
+	  		var accepted = is_theme_accepted(i);
+	  		var premium_theme = i >= 13;
 
-//     // After we've done our setup, we tell the store to do
-//     // it's first refresh. Nothing will happen if we do not call store.refresh()
-//     store.refresh();
-//     alert("4");
-// }
+				task_name.style.color = "#545454";
+	  		if (accepted) {
+	  				img_el.style.display = 'inherit';
+	  				img_el.src = "img/accepted.png";
+	  		} else if (premium_theme) {
+	  				img_el.style.display = 'inherit';
+	  				if (full_version) {
+	  						img_el.src = "img/star.png";
+	  				} else {
+	  						img_el.src = "img/lock.png";
+	  						task_name.style.color = "#AAAAAA";
+	  				}
+	  		}
+	  }
+}
 
-// function locked() {
-//     alert("Медиа контент для данной задачи находится в стадии разработки");
+function is_theme_accepted(theme_index) {
+    for (task_i = 0; task_i < 5; task_i++) {
+    	if (!is_task_accepted(theme_index, task_i))
+    		return false;
+    }
+    return true;
+}
 
-// }
+function is_task_accepted(theme_index, task_index) {
+    return get_task_state(theme_index, task_index) == "accepted";
+}
+function get_task_state(theme_index, task_index) {
+		var theme_key = "Задание " + theme_index.toString();
+    var state_key = theme_key + "_" + task_index + "_state";
+    var state = localStorage.getItem(state_key);
+    // alert(state_key + " = " + state);
+    return state;
+}
+
+render_themes_state();

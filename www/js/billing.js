@@ -48,71 +48,37 @@ app.initStore = function() {
     // Inform the store of your products
     log('registerProducts');
     store.register({
-        id:    'full_content_access',
-        alias: 'full content',
+        id:    'crystal.tech.defeat_use.purchase.full_version',
+        alias: 'full version',
         type:   store.NON_CONSUMABLE
     });
 
-    // store.register({
-    //     id:    'cc.fovea.purchase.nonconsumable1',
-    //     alias: 'full version',
-    //     type:   store.NON_CONSUMABLE
-    // });
-
-    // store.register({
-    //     id:    'cc.fovea.purchase.subscription1',
-    //     alias: 'subscription1',
-    //     type:  store.PAID_SUBSCRIPTION
-    // });
 
     // When any product gets updated, refresh the HTML.
     store.when("product").updated(function (p) {
         app.renderIAP(p);
     });
 
-    // store.when("subscription1").approved(function(p) {
-    //     log("verify subscription");
-    //     p.verify();
-    // });
-    // store.when("subscription1").verified(function(p) {
-    //     log("subscription verified");
-    //     p.finish();
-    // });
-    // store.when("subscription1").unverified(function(p) {
-    //     log("subscription unverified");
-    // });
-    // store.when("subscription1").updated(function(p) {
-    //     if (p.owned) {
-    //         document.getElementById('subscriber-info').innerHTML = 'You are a lucky subscriber!';
-    //     }
-    //     else {
-    //         document.getElementById('subscriber-info').innerHTML = 'You are not subscribed';
-    //     }
-    // });
-
     // Log all errors
     store.error(function(error) {
         log('ERROR ' + error.code + ': ' + error.message);
     });
 
-    // When purchase of an extra life is approved,
-    // deliver it... by displaying logs in the console.
-    // store.when("extra life").approved(function (order) {
-    //     log("You got an EXTRA LIFE!");
-    //     order.finish();
-    // });
-
     // When purchase of the full version is approved,
     // show some logs and finish the transaction.
-    store.when("full content").approved(function (order) {
-        log('You just unlocked the FULL CONTENT!');
+    store.when("full version").approved(function (order) {
+        log('You just unlocked the FULL VERSION!');
         // alert('You just unlocked the FULL CONTENT!');
         order.finish();
     });
 
     // The play button can only be accessed when the user
     // owns the full version.
-    store.when("full content").updated(function (product) {
+    store.when("full version").updated(function (product) {
+
+        if (product.owned) {
+            localStorage.setItem("full_version_product_state", "owned");
+        }
 
         // document.getElementById("access-full-version-button").style.display =
         //     product.owned ? "block" : "none";
@@ -141,25 +107,6 @@ app.initStore = function() {
         // }
     });
 
-    // Alternatively, it's technically feasible to have a button that
-    // is always visible, but shows an alert if the full version isn't
-    // owned.
-    // ... but your app may be rejected by Apple if you do it this way.
-    //
-    // Here is the pseudo code for illustration purpose.
-
-    // myButton.onclick = function() {
-    //   store.ready(function() {
-    //     if (store.get("full version").owned) {
-    //       // access the awesome feature
-    //     }
-    //     else {
-    //       // display an alert
-    //     }
-    //   });
-    // };
-
-
     // Refresh the store.
     //
     // This will contact the server to check all registered products
@@ -173,35 +120,23 @@ app.initStore = function() {
 
 app.renderIAP = function(p) {
 
-    // var elId = p.id.split(".")[3];
-
-    // var el = document.getElementById(elId + '-purchase');
-    // if (!el) return;
-
-    // if (!p.loaded) {
-    //     el.innerHTML = '<h3>...</h3>';
-    // }
-    // else if (!p.valid) {
-    //     el.innerHTML = '<h3>' + p.alias + ' Invalid</h3>';
-    // }
-    // else if (p.valid) {
-    //     var html = "<h3>" + p.title + "</h3>" + "<p>" + p.description + "</p>";
-    //     if (p.canPurchase) {
-    //         html += "<div class='button' id='buy-" + p.id + "' productId='" + p.id + "' type='button'>" + p.price + "</div>";
-    //     }
-    //     el.innerHTML = html;
-    //     if (p.canPurchase) {
-    //         document.getElementById("buy-" + p.id).onclick = function (event) {
-    //             var pid = this.getAttribute("productId");
-    //             store.order(pid);
-    //         };
-    //     }
-    // }
+    // theme_list.js should be included first
+    render_themes_state();
 };
 
-app.purchase = function(p) {
+app.try_to_open_theme = function(theme_address) {
+    var res = localStorage.getItem("full_version_product_state");
+    if (res != "owned") {
+        app.purchase_full_version();
+        return;
+    }
+
+    document.location = theme_address;
+}
+
+app.purchase_full_version = function(p) {
     // alert("trying to purchase");
-    store.order("full_content_access");
+    store.order("crystal.tech.defeat_use.purchase.full_version");
     // alert("hm");
 }
 

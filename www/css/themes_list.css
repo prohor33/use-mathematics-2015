@@ -50,16 +50,14 @@ h1 {
     padding-left: 0;
     color: #545454;
 }
-.taskname_faded {
-    color: #AAAAAA;
-}
 
 .arrowright {
     margin-right: 10px;
 }
-.lock {
+.theme_img {
     width: 26px;
-    margin-left: -18px;
+    margin-left: -16px;
+    margin-right: 2px;
 }
 
 .table {

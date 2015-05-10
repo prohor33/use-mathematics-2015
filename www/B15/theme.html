@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/theme.css" />
+        <title>Тема</title>
+    </head>
+    <body onload="load_data()">
+        <div class="toolbar">
+            <img class="back" src="../img/arrow_back.png" onclick="toolbar.onBack();"></img>
+            <div class="title">Задание 14</div>
+        </div>
+        <div class="toolbar_space">
+        </div>
+        
+        <div class="content">
+            <h1 class="header">Наибольшее и наименьшее значение функций</h1>
+
+            <div id="video_container">
+                <img id="video_image" class="video" src="../img/thumbnails/14.jpg" onclick="img_on_click()">
+                <div id="youtube_player">
+                    <iframe id="video" class="video" frameborder="0" 
+                        src="http://www.youtube.com/embed/fphVx1Pez7s?hd=1&rel=0&showinfo=0&modestbranding=1&enablejsapi=1"></iframe>
+                </div>
+            </div>
+
+            <p class="text">
+                Снова задание на производные, но теперь уже на исследование функции на точки экстремума (точки максимума и точки минимума). Алгоритм очень прост: нужно взять производную функции, приравнять ее к нулю и найти решения данного уравнения. Это и будут точки экстремума. Если нужно найти максимальное или минимальное значение функции, то в ответ нужно писать не саму точку экстремума, а именно ЗНАЧЕНИЕ функции в этой точке (т.е. просто подставить эту точку в функцию). Удачи!
+            </p>
+
+            <button class="exercise_button" onclick="document.location = 'exercise.html';">Задачи</button>
+        </div>
+
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/theme.js"></script>
+        <script type="text/javascript" src="../js/video.js"></script>
+    </body>
+</html>

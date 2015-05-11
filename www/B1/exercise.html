@@ -72,10 +72,17 @@
 
         <div class="bottom_panel">
             <div class="bottom_panel_title">Вариант 1 из 5</div>
-            <img class="task_arrow" id="task_arrow_right" src="../img/arrow_right_tasks.png" onclick="next_task()"></img>
-            <img class="task_arrow" id="task_arrow_left" src="../img/arrow_left_tasks.png" onclick="prev_task()"></img>
+                <img class="task_arrow" id="task_arrow_right" src="../img/arrow_right_tasks.png" onclick="next_task()"></img>
+                <img class="task_arrow" id="task_arrow_left" src="../img/arrow_left_tasks.png" onclick="prev_task()"></img>
+            </div>
+            <div class="bottom_panel_space">
         </div>
-        <div class="bottom_panel_space">
+
+        <div id="overlay" onclick="hide_overlay()">
+            <div>
+                <img src="../img/accepted.png" alt="Accepted" height="35" width="35"></img>
+                <p>Задача решена правильно!</p>
+            </div>
         </div>
 
         <script type="text/javascript" src="../cordova.js"></script>

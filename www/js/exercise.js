@@ -100,7 +100,8 @@ function try_to_answer() {
 function right_answer() {
     put_task_accepted();
     show_accepted();
-    alert("Правильно!");
+    //alert("Правильно!");
+    show_overlay();
 }
 function wrong_answer() {
     edit_field.style.background = '';
@@ -163,3 +164,13 @@ function get_current_task() {
     return parseInt(res);
 }
 
+// Overlay
+function show_overlay() {
+    el = document.getElementById("overlay");
+    el.style.visibility = "visible";
+}
+
+function hide_overlay() {
+    el = document.getElementById("overlay");
+    el.style.visibility = "hidden";
+}

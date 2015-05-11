@@ -1,6 +1,7 @@
 var toolbar = {
 	parent_page: "",
 	onBack: function() {
-  	navigator.app.backHistory();
+  	// navigator.app.backHistory();
+  	window.history.back()
 	}
 };

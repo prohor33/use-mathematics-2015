@@ -354,7 +354,7 @@ input[type=radio   ]:not(old){
   padding : 0;
   opacity : 0;
   margin-left: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 15px;  /* should be for old Google Nexus */
   margin-top: 0;
 }
 

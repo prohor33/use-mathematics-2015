@@ -1,10 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="crystal.tech.defeat_use" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="crystal.tech.defeat_use" version="1.0.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Победи ЕГЭ 2015</name>
     <description>
-        Приложение поможет подготовится к ЕГЭ по математике
+        Пройдите двухнедельный курс подготовки!
+        Приложение охватывает 18 тем по математике (задания №1-17 и №19). 
+        Также в приложении вы найдете:
+        - видеоурок по каждому заданию с разбором основных приемов решения задач;
+        - полную теорию для каждого задания;
+        - режим тренировки: самостоятельное решение задач с возможностью проверки ответа;
+        - реальные задания ЕГЭ: большинство задач взяты из открытого банка заданий ФИПИ;
+        - задания нового образца: весь материал подбирался на основе самых новых КИМов 2015 года, также включена экономическая задача (№19).
+
+        Еще больше информации смотри в видео-приветствии на первой страничке приложения. Готовься к ЕГЭ вместе с нами и ты победишь ЕГЭ!
     </description>
-    <author email="crystaltechapps@gmail.com" href="http://google.com">
+    <author email="crystaltechapps@gmail.com" href="https://play.google.com/store/apps/developer?id=CrystalTech">
         CrystalTech
     </author>
     <content src="index.html" />

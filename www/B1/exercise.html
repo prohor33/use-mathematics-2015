@@ -80,17 +80,61 @@
 
         <div class="overlay" id="overlay_correct" onclick="hide_overlay('overlay_correct')">
             <div>
-                <img src="../img/accepted.png" alt="Accepted" height="35" width="35"></img>
-                <p>Правильный ответ!</p>
-                <button class="answer_button" onclick="hide_overlay('overlay_correct')">Продолжить</button>
+                <table>
+                    <tr>
+                        <td align="center" valign="middle">
+                            <img src="../img/accepted.png" height="35" width="35"></img>
+                        </td>
+                        <td align="left" valign="middle">
+                            <p>Правильный ответ!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle" colspan="2">
+                            <button onclick="hide_overlay('overlay_correct')">Продолжить</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay_wrong" onclick="hide_overlay('overlay_wrong')">
+            <div>
+                <table>
+                    <tr>
+                        <td align="center" valign="middle">
+                            <img src="../img/wrong.png" height="35" width="35"></img>
+                        </td>
+                        <td align="left" valign="middle">
+                            <p>Неправильный ответ!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle" colspan="2">
+                            <button onclick="hide_overlay('overlay_wrong')">Продолжить</button>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
 
         <div class="overlay" id="overlay_cheat" onclick="hide_overlay('overlay_cheat')">
             <div>
-                <img src="../img/accepted.png" alt="Accepted" height="35" width="35"></img>
-                <p>Эй, так не честно!</p>
-                <button class="answer_button" onclick="hide_overlay('overlay_cheat')">Продолжить</button>
+                <table>
+                    <tr>
+                        <td align="center" valign="middle">
+                            <img src="../img/warn.png" height="35" width="35"></img>
+                        </td>
+                        <td align="left" valign="middle">
+                            <p>Эй, так не честно!</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="middle" colspan="2">
+                            <button onclick="hide_overlay('overlay_cheat')">Продолжить</button>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
 

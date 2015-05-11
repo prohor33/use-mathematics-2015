@@ -80,7 +80,8 @@ function toggle_animation(right) {
 
 function try_to_answer() {
     if (showing_answer) {
-        alert("Эй, так не честно!");
+        //alert("Эй, так не честно!");
+        show_overlay("overlay_cheat");
         return;
     }
     var right = edit_field.value == document.getElementsByClassName("answer")[current_task].innerHTML;
@@ -101,7 +102,7 @@ function right_answer() {
     put_task_accepted();
     show_accepted();
     //alert("Правильно!");
-    show_overlay();
+    show_overlay('overlay_correct');
 }
 function wrong_answer() {
     if (edit_field) {
@@ -173,13 +174,13 @@ function get_current_task() {
 }
 
 // Overlay
-function show_overlay() {
-    el = document.getElementById("overlay");
+function show_overlay(overlayId) {
+    el = document.getElementById(overlayId);
     el.style.visibility = "visible";
 }
 
-function hide_overlay() {
-    el = document.getElementById("overlay");
+function hide_overlay(overlayId) {
+    el = document.getElementById(overlayId);
     el.style.visibility = "hidden";
 }
 

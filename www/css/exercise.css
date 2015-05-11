@@ -287,3 +287,34 @@ img.formula:active {
     text-align:center;
     font-size: 140%;
 }
+
+/*body{
+  margin      : 0;
+  padding     : 1.5em;
+  font-family : Georgia,Utopia,Charter,serif;
+}
+
+.example{
+  margin-bottom : 1.5em;
+}*/
+
+input[type=radio   ]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}
+
+input[type=radio   ]:not(old) + img{
+  display      : inline-block;
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url('../img/checks.png') no-repeat 0 0;
+  line-height  : 24px;
+  height: 24px;
+}
+
+input[type=radio]:not(old):checked + img{
+  background-position : 0 -48px;
+}
+

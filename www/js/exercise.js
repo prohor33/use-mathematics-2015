@@ -104,10 +104,18 @@ function right_answer() {
     show_overlay();
 }
 function wrong_answer() {
-    edit_field.style.background = '';
+    if (edit_field) {
+        // if input field
+        edit_field.style.background = '';
+    } else {
+        // if variants
+        alert("Ответ не верный");
+    }
 }
 
 function show_accepted() {
+    if (!edit_field)    // may be variants and no edit  field
+        return;
     edit_field.style.background = 'url(../img/accepted.png)';
     edit_field.style.backgroundRepeat = 'no-repeat';
     edit_field.style.backgroundSize = '35px 35px';
@@ -174,3 +182,29 @@ function hide_overlay() {
     el = document.getElementById("overlay");
     el.style.visibility = "hidden";
 }
+
+
+function try_to_answer_with_variant() {
+    var selected = get_selected_answer_variant();
+    var right = selected == parseInt(document.getElementsByClassName("answer")[current_task].innerHTML);
+    right ? right_answer() : wrong_answer();
+}
+
+function get_selected_answer_variant() {
+    var task_el = document.getElementsByClassName("task")[current_task];
+    var node_list = task_el.getElementsByTagName('input');
+ 
+    var answer_index = 0;
+    for (var i = 0; i < node_list.length; i++) {
+        var node = node_list[i];
+     
+        if (node.getAttribute('type') == 'radio') {
+            if (node.checked)
+                return answer_index + 1;
+            answer_index++;
+        }
+    }
+    return -1;
+}
+
+

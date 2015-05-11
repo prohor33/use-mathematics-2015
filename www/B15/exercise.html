@@ -30,7 +30,21 @@
                     а) Решите уравнение <img class="task_image" style="height:2.8em; width:auto;" src="../img/tasks/B15/1.1.png"></img><br>
                     б) Найдите все корни этого уравнения, принадлежащие промежутку <img class="text_image" style="height:1.5em; width:auto;" src="../img/tasks/B15/1.2.png"></img>
                 </p>
-                <p class="answer" hidden>6</p>
+                <div>
+                    <input id="radio1" type="radio" name="radio" value="1" checked="checked">
+                    <img class="task_image" for="radio1" src="../img/tasks/B15/variants/1.png"></img>
+                </div>
+                <div>
+                    <input id="radio2" type="radio" name="radio" value="2" checked="checked">
+                    <img class="task_image" for="radio2" src="../img/tasks/B15/variants/2.png"></img>
+                </div>
+                <div>
+                    <input id="radio3" type="radio" name="radio" value="3"><label for="radio3">Option 3</label>
+                </div>
+                <div>
+                    <input id="radio4" type="radio" name="radio" value="4"><label for="radio4">Option 4</label>
+                </div>
+                <p class="answer" hidden>2</p>
             </div>
 
             <!-- 2 -->
@@ -68,9 +82,7 @@
                 <p class="answer" hidden>9</p>
             </div>
 
-            <input id="form-field" type="text" name="email" />
-            <a href="#" class="answer_button" onclick="try_to_answer()">Ответить</a>
-            <a href="#" class="answer_button" id="show_answer_button" onclick="show_answer()">Показать ответ</a>
+            <a href="#" class="answer_button" onclick="try_to_answer_with_variant()">Ответить</a>
         </div>
 
         <div class="bottom_panel">

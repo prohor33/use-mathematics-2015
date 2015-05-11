@@ -26,6 +26,7 @@ function prev_task() {
 function switch_task(task_was) {
     update_task(task_was);
     update_accepted();
+    update_radio_buttons();
 
     // save curr task number
     put_current_task();
@@ -43,7 +44,8 @@ function update_task(task_was) {
     bottom_panel_title.innerHTML = "Вариант " + (current_task + 1).toString() + " из " + max_task.toString();
 
     // clear edit field
-    edit_field.value = "";
+    if (edit_field)
+        edit_field.value = "";
 }
 
 function show_answer() {
@@ -56,14 +58,16 @@ function show_answer() {
 }
 
 // apply all webkit events
-edit_field.addEventListener("webkitAnimationStart", animation_listener);
-edit_field.addEventListener("webkitAnimationIteration", animation_listener);
-edit_field.addEventListener("webkitAnimationEnd", animation_listener);
+if (edit_field) {
+    edit_field.addEventListener("webkitAnimationStart", animation_listener);
+    edit_field.addEventListener("webkitAnimationIteration", animation_listener);
+    edit_field.addEventListener("webkitAnimationEnd", animation_listener);
 
-// and standard events
-edit_field.addEventListener("animationstart", animation_listener);
-edit_field.addEventListener("animationiteration", animation_listener);
-edit_field.addEventListener("animationend", animation_listener);
+    // and standard events
+    edit_field.addEventListener("animationstart", animation_listener);
+    edit_field.addEventListener("animationiteration", animation_listener);
+    edit_field.addEventListener("animationend", animation_listener);
+}
 
 // handle animation events
 function animation_listener(e) {
@@ -74,13 +78,15 @@ function animation_listener(e) {
 
 // start/stop animation
 function toggle_animation(right) {
+    if (!edit_field)
+        return;
     var on = (edit_field.className != "");
     edit_field.className = (on ? "" : ((right ? "right" : "wrong") + "_answer"));
 };
 
 function try_to_answer() {
     if (showing_answer) {
-        //alert("Эй, так не честно!");
+        // Эй, так не честно!
         show_overlay("overlay_cheat");
         return;
     }
@@ -110,7 +116,7 @@ function wrong_answer() {
         edit_field.style.background = '';
     } else {
         // if variants
-        alert("Ответ не верный");
+        show_overlay("overlay_wrong");
     }
 }
 
@@ -127,7 +133,8 @@ function update_accepted() {
     if (is_task_accepted()) {
         show_accepted();
     } else {
-        edit_field.style.background = '';
+        if (edit_field)
+            edit_field.style.background = '';
     }
 }
 
@@ -141,6 +148,7 @@ function on_start() {
             switch_task(0);
     }
     update_accepted();
+    update_radio_buttons();
 }
 
 function put_task_accepted() {
@@ -206,6 +214,16 @@ function get_selected_answer_variant() {
         }
     }
     return -1;
+}
+
+function update_radio_buttons() {
+    var task_el = document.getElementsByClassName("task")[current_task];
+    var node_list = task_el.getElementsByTagName('input');
+    if (!node_list)
+        return;
+
+    var node = node_list[0];
+    node.checked = true;
 }
 
 

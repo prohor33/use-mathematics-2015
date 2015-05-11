@@ -371,4 +371,6 @@ input[type=radio]:not(old):checked + label{
 
 .variant_image {
     transform: translate(0, -20%);
+    /*max-width: 50%;*/
+    max-width: 300px;
 }

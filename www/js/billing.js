@@ -119,26 +119,22 @@ app.initStore = function() {
 };
 
 app.renderIAP = function(p) {
-
     // theme_list.js should be included first
     render_themes_state();
 };
 
 app.try_to_open_theme = function(theme_address) {
-    // TODO: uncomment!!!
-    // var res = localStorage.getItem("full_version_product_state");
-    // if (res != "owned") {
-    //     app.purchase_full_version();
-    //     return;
-    // }
+    var res = localStorage.getItem("full_version_product_state");
+    if (res != "owned") {
+        app.purchase_full_version();
+        return;
+    }
 
     document.location = theme_address;
 }
 
 app.purchase_full_version = function(p) {
-    // alert("trying to purchase");
     store.order("crystal.tech.defeat_use.purchase.full_version");
-    // alert("hm");
 }
 
 // 

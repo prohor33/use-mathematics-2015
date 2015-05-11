@@ -353,7 +353,9 @@ input[type=radio   ]:not(old){
   margin  : 0;
   padding : 0;
   opacity : 0;
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  margin-top: 0;
 }
 
 input[type=radio   ]:not(old) + label{
@@ -370,7 +372,7 @@ input[type=radio]:not(old):checked + label{
 }
 
 .variant_image {
+    -ms-transform: translate(0, -20%); /* IE 9 */
+    -webkit-transform: translate(0, -20%); /* Chrome, Safari, Opera */
     transform: translate(0, -20%);
-    /*max-width: 50%;*/
-    max-width: 300px;
 }

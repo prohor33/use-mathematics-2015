@@ -5,13 +5,14 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
+/*This is working somehow!*/
 body {
-    /* TODO: not working on some devices; */
+    background: url("../img/back_squared.png");
+    background-position: left center;
     background-size: 30% auto;
-    z-index: -2;
-    /* Prevent scrolling */
     overflow: hidden;
-    background-image: url("../img/back_squared.png");
+    /* With this no background on iphone */
+    /*z-index: -2;*/
 }
 
 html { overflow: hidden; }

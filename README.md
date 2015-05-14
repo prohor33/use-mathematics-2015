@@ -1,14 +1,27 @@
-# use-mathematics-2015
-ЕГЭ Математика 2015
+#ЕГЭ Математика 2015
 
-Android Приложение
-Математика ЕГЭ 2015
+#Plugins
+cc.fovea.cordova.purchase
+https://github.com/j3k0/cordova-plugin-purchase
 
+cordova-plugin-network-information
+https://github.com/apache/cordova-plugin-network-information
 
-В приложении будут все задачи части Б, а также С1, С2, С3 и С5. В папке каждого задания сначала небольшая теория (шпаргалка с формулами), видеоразбор “с руки” одной задачи, а потом 5-7 заданий с возможностью проверить ответ.
- Позже можно будет добавить полные варианты.
- 
- Соответственно, нам нужно сделать приложение, которое будет:
-Показывать что ЕГЭ - это не сложно и даже весело
-Быть небольшим и “компактным” в плане представленного материала
-Разбор задач должен включать в себя небольшие отступления в теорию (видео ~ 5 минут)
+## How to install plugins?
+
+###Purchase plugin
+
+```sh
+cordova plugin add cc.fovea.cordova.purchase
+```
+
+Need android too?
+
+```sh
+cordova plugin add cc.fovea.cordova.purchase --variable BILLING_KEY="MIIB...AQAB"
+```
+
+###Network state plugin
+```sh
+cordova plugin add cordova-plugin-network-information
+```

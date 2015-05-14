@@ -35,10 +35,13 @@
 
 img.formula {
     position: absolute;
-    top: 21%;
+    /*top: 21%;*/
+    /*top: 27%;*/
     right: 10px;
     width: auto;
-    height: 58%;
+    /*height: 58%;*/
+    height: 43%;
+    bottom: 12px;
 }
 img.formula:active {
     opacity: .5;
@@ -235,7 +238,7 @@ img.formula:active {
 }
 
 .title {
-    font-size: 150%;
+    font-size: 1.9em;
 }
 
 /* Landscape layout (with min-width) */

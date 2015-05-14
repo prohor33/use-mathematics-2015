@@ -26,7 +26,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 10%;
+    height: 12%;
     padding: 0px;
     margin: 0px;
     background-color: #ffec64;
@@ -35,10 +35,13 @@ body {
 
 img.back {
     position: absolute;
-    top: 19%;
+    /*top: 19%;*/
+    /*top: 40%;*/
     left: 15px;
     width: auto;
-    height: 62%;
+    /*height: 62%;*/
+    height: 45%;
+    bottom: 12px;
 }
 img.back:active {
     /*background-color:#ffab23;*/
@@ -50,10 +53,11 @@ img.back:active {
 .title {
     /*background-color: #00FFFF;*/
     position: absolute;
-    font-size: 180%;
+    /*font-size: 180%;*/
+    font-size: 2em;
     font-weight: bold;
     text-align: center;
-    top: 50%;
+    top: 62%;
     left: 50%;
     -ms-transform: translate(-50%, -50%); /* IE 9 */
     -webkit-transform: translate(-50%, -50%); /* Chrome, Safari, Opera */
@@ -70,7 +74,7 @@ img.back:active {
 
 .toolbar_space {
     width: 100%;
-    height: 10%;
+    height: 12%;
     padding: 0px;
     margin: 0px;
 }

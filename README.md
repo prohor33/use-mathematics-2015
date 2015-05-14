@@ -1,10 +1,10 @@
 #ЕГЭ Математика 2015
 
 #Plugins
-cc.fovea.cordova.purchase
+cc.fovea.cordova.purchase<br>
 https://github.com/j3k0/cordova-plugin-purchase
 
-cordova-plugin-network-information
+cordova-plugin-network-information<br>
 https://github.com/apache/cordova-plugin-network-information
 
 ## How to install plugins?

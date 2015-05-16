@@ -27,6 +27,6 @@ cordova plugin add cordova-plugin-network-information
 ```
 
 ##Troubleshooting
-If app crashing on loading theme list, see this issue:<br>
+If app is crashing on loading theme list, see this issue:<br>
 https://github.com/j3k0/cordova-plugin-purchase/issues/123  <br>
 basically, you need to set biiling key in billing_key_param.xml manually

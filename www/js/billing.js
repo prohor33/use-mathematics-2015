@@ -124,12 +124,11 @@ app.renderIAP = function(p) {
 };
 
 app.try_to_open_theme = function(theme_address) {
-    //  TODO: uncomment!
-    // var res = localStorage.getItem("full_version_product_state");
-    // if (res != "owned") {
-    //     app.purchase_full_version();
-    //     return;
-    // }
+    var res = localStorage.getItem("full_version_product_state");
+    if (res != "owned") {
+        app.purchase_full_version();
+        return;
+    }
 
     document.location = theme_address;
 }

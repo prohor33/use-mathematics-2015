@@ -2,6 +2,16 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
+function i_to_old_index(int i) {
+	old_i = i;
+	if (i >= 3)
+		old_i = old_i + 1;
+
+	if (old_i >= 12)
+		old_i = old_i + 1;
+	return old_i;
+}
+
 function render_themes_state() {
 	  var res = localStorage.getItem("full_version_product_state");
 	  var full_version = res == "owned";
@@ -11,16 +21,15 @@ function render_themes_state() {
 	  var task_names = document.getElementsByClassName("taskname");
 	  // alert(images);
 
-	  // actually 19, withouy 18's
-	  for (var i = 1; i <= 18; i++) {
+	  for (var i = 1; i <= 16; i++) {
+
+	  		old_i = i_to_old_index(i);
 
 	  		var img_el = images[i - 1];
 	  		var task_name = task_names[i -1];
 
-	  		if (i == 18)
-	  			i = 19;	// it's actually 19
-	  		var accepted = is_theme_accepted(i);
-	  		var premium_theme = i >= 13;
+	  		var accepted = is_theme_accepted(old_i);
+	  		var premium_theme = old_i >= 13;
 
 				task_name.style.color = "#545454";
 	  		if (accepted) {

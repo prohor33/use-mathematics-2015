@@ -2,7 +2,8 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
-
+function load_data() {
+}
 
 // function load_data() {
 //     // alert(window.location);

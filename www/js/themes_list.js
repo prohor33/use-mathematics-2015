@@ -2,7 +2,7 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
-function i_to_old_index(int i) {
+function i_to_old_index(i) {
 	old_i = i;
 	if (i >= 3)
 		old_i = old_i + 1;

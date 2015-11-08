@@ -9,6 +9,10 @@ function i_to_old_index(i) {
 
 	if (old_i >= 12)
 		old_i = old_i + 1;
+
+	// 18 was skipped
+	if (old_i == 18)
+		old_i = 19;
 	return old_i;
 }
 

@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+html { overflow: hidden; }
+
+.title {
+    font-size: 150%;
+}
+
+.text {
+	text-transform: none;
+	padding: 10px;
+	font-size: 135%;
+}

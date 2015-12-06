@@ -74,3 +74,14 @@ table {
 }
 
 
+img.share_btn {
+    position: absolute;
+    top: 21%;
+    right: 15px;
+    width: auto;
+    height: 58%;
+}
+img.share_btn:active {
+    opacity: .5;
+}
+

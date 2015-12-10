@@ -89,14 +89,14 @@ function on_share() {
   }
 	text = '';
 	if (tasks_solved == tasks_all_over) {
-		text = '#ПобедиЕГЭ2016 Фух, только что решил все ' + tasks_solved.toString() + ' задания по математике! %)';
+		text = '#ПобедиЕГЭ2016\nФух, только что решил все ' + tasks_solved.toString() + ' задания по математике! %)';
 	} else if (tasks_solved == 0) {
-		text = '#ПобедиЕГЭ2016 Фух, решил пока ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =('
+		text = '#ПобедиЕГЭ2016\nФух, решил пока ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =('
 	} else {
-		text = '#ПобедиЕГЭ2016 Фух, решил пока ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)'
+		text = '#ПобедиЕГЭ2016\nФух, решил пока ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)'
 	}
-	link = 'https://play.google.com/store/apps/details?id=crystal.tech.defeat_use';
-	text  = text + '\n' + link;
+	link = 'https://goo.gl/st0WiU';
+	text  = text + '\n' + 'Приложение на GooglePlay: ' + link;
 	window.plugins.socialsharing.share(text, null, 'https://cloud.githubusercontent.com/assets/5472900/11669155/3dd0cf68-9e0c-11e5-942f-cbe95fb8b192.png', null);
 }
 

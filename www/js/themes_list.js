@@ -2,6 +2,8 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
+IS_IOS = true;
+
 function i_to_old_index(i) {
 	old_i = i;
 	if (i >= 3)
@@ -19,7 +21,8 @@ function i_to_old_index(i) {
 function render_themes_state() {
 	  var res = localStorage.getItem("full_version_product_state");
 	  var full_version = res == "owned";
-	  // full_version = true;
+	  if (IS_IOS)
+	  	full_version = true;
 
 	  var images = document.getElementsByClassName("theme_img");
 	  var task_names = document.getElementsByClassName("taskname");

@@ -85,3 +85,8 @@ img.share_btn:active {
     opacity: .5;
 }
 
+/* ios */
+img.share_btn {
+    top: 40%;
+    height: 45%;
+}

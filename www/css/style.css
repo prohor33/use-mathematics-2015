@@ -60,6 +60,16 @@ img.back:active {
     transform: translate(-50%, -50%);
 }
 
+/* ios */
+.title {
+    top: 60%;
+    font-size: 150%;
+}
+img.back {
+    top: 40%;
+    height: 46%;
+}
+
 .content {
     /*background-color: #FFAAFF;*/
     width: 100%;

@@ -2,6 +2,8 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
+IS_IOS = true;
+
 // Our application's global object
 var app = {};
 
@@ -124,6 +126,11 @@ app.renderIAP = function(p) {
 };
 
 app.try_to_open_theme = function(theme_address) {
+    if (IS_IOS) {
+        document.location = theme_address;
+        return;
+    }
+
     var res = localStorage.getItem("full_version_product_state");
     if (res != "owned") {
         app.purchase_full_version();

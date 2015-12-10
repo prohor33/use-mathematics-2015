@@ -44,6 +44,12 @@ img.formula:active {
     opacity: .5;
 }
 
+/* ios */
+img.formula {
+    top: 40%;
+    height: 45%;
+}
+
 .bottom_panel {
     background-color: #D6D6D6;
     position: fixed;

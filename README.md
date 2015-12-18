@@ -28,6 +28,11 @@ cordova plugin add cc.fovea.cordova.purchase --variable BILLING_KEY="MIIB...AQAB
 cordova plugin add cordova-plugin-network-information
 ```
 
+###Social Sharing plugin
+```sh
+cordova plugin add cordova-plugin-x-socialsharing
+```
+
 ##Troubleshooting
 If app is crashing on loading theme list, see this issue:<br>
 https://github.com/j3k0/cordova-plugin-purchase/issues/123  <br>

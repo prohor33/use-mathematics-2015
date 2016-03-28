@@ -2,7 +2,7 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
-IS_IOS = true;
+IS_IOS = false;
 
 function i_to_old_index(i) {
 	old_i = i;
@@ -94,12 +94,13 @@ function on_share() {
 	if (tasks_solved == tasks_all_over) {
 		text = '#ПобедиЕГЭ2016\nФух, только что решил все ' + tasks_solved.toString() + ' задания по математике! %)';
 	} else if (tasks_solved == 0) {
-		text = '#ПобедиЕГЭ2016\nФух, решил пока ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =('
+		text = '#ПобедиЕГЭ2016\nПока решил ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)'
 	} else {
-		text = '#ПобедиЕГЭ2016\nФух, решил пока ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)'
+		text = '#ПобедиЕГЭ2016\nУже решил ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)'
 	}
-	link = 'https://goo.gl/st0WiU';
-	text  = text + '\n' + 'Приложение на GooglePlay: ' + link;
+	link = 'www.победиегэ.рф';
+	text = text + '\n\n' + link + '\n';
+	text  = text + '\n' + 'Приложение доступно в GooglePlay и AppStore.';
 	window.plugins.socialsharing.share(text, null, 'https://cloud.githubusercontent.com/assets/5472900/11669155/3dd0cf68-9e0c-11e5-942f-cbe95fb8b192.png', null);
 }
 

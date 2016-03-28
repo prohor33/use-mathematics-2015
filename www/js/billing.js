@@ -2,7 +2,7 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
-IS_IOS = true;
+IS_IOS = false;
 
 // Our application's global object
 var app = {};

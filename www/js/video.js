@@ -39,6 +39,7 @@ function checkConnection() {
             connection = !(networkState == Connection.NONE || networkState == Connection.UNKNOWN);
         }, 500);
     } catch(e) {
+        window.analytics.trackException('checkConnection catch: ' + e, false);
         alert(e);
         $.each(navigator, function(key, value) {
             alert(key+' => '+value);
@@ -89,6 +90,7 @@ function img_on_click() {
                 show_video();
             } else {
                 alert("Проверьте интернет соединение");
+                window.analytics.trackException('Проверьте интернет соединение', false);
             }
         }, 550);
         

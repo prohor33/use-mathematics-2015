@@ -55,6 +55,7 @@ function show_answer() {
         showing_answer = false;
         edit_field.value = "";
     }, 2000);
+    window.analytics.trackEvent('Answer', 'Show answer', theme_key + " task: " + current_task.toString());
 }
 
 // apply all webkit events
@@ -88,6 +89,7 @@ function try_to_answer() {
     if (showing_answer) {
         // Эй, так не честно!
         show_overlay("overlay_cheat");
+        window.analytics.trackEvent('Answer', 'Cheat', theme_key + " task: " + current_task.toString());
         return;
     }
     var right = edit_field.value == document.getElementsByClassName("answer")[current_task].innerHTML;
@@ -109,6 +111,8 @@ function right_answer() {
     show_accepted();
     //alert("Правильно!");
     show_overlay('overlay_correct');
+
+    window.analytics.trackEvent('Answer', theme_key + " task: " + current_task.toString(), "Right");
 }
 function wrong_answer() {
     if (edit_field) {
@@ -118,6 +122,8 @@ function wrong_answer() {
         // if variants
         show_overlay("overlay_wrong");
     }
+
+    window.analytics.trackEvent('Answer', theme_key + " task: " + current_task.toString(), "Wrong");
 }
 
 function show_accepted() {

@@ -38,6 +38,7 @@ app.initStore = function() {
 
     if (!window.store) {
         log('Store not available');
+        window.analytics.trackException('Store not available', false);
         return;
     }
 
@@ -64,6 +65,7 @@ app.initStore = function() {
     // Log all errors
     store.error(function(error) {
         log('ERROR ' + error.code + ': ' + error.message);
+        window.analytics.trackException('ERROR ' + error.code + ': ' + error.message, false);
     });
 
     // When purchase of the full version is approved,
@@ -79,6 +81,13 @@ app.initStore = function() {
     store.when("full version").updated(function (product) {
 
         if (product.owned) {
+            var was_res = localStorage.getItem("full_version_product_state");
+            if (was_res != "owned") {
+                window.analytics.trackEvent('Action', 'Purchase', 'Full version');
+            } else {
+                window.analytics.trackEvent('Info', 'Update owned', 'Full version');
+            }
+
             localStorage.setItem("full_version_product_state", "owned");
         }
 
@@ -138,10 +147,11 @@ app.try_to_open_theme = function(theme_address) {
     }
 
     document.location = theme_address;
-}
+};
 
 app.purchase_full_version = function(p) {
     store.order("crystal.tech.defeat_use.purchase.full_version");
+    window.analytics.trackEvent('Action', 'Open purchase window', 'Full version');
 }
 
 // 

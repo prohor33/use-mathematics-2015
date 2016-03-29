@@ -80,28 +80,32 @@ function on_share() {
 	tasks_solved = 0;
 	tasks_all_over = 0;
 
-  for (var i = 1; i <= 16; i++) {
+	for (var i = 1; i <= 16; i++) {
 
 		old_theme_index = i_to_old_index(i);
 
 		for (task_i = 0; task_i < 5; task_i++) {
-  		if (is_task_accepted(old_theme_index, task_i))
-  			tasks_solved = tasks_solved + 1;
-  		tasks_all_over = tasks_all_over + 1;
-  	}
-  }
+			if (is_task_accepted(old_theme_index, task_i))
+				tasks_solved = tasks_solved + 1;
+			tasks_all_over = tasks_all_over + 1;
+		}
+	}
+
+    window.analytics.trackEvent('Action', 'Share', "tasks", tasks_solved);
+
 	text = '';
 	if (tasks_solved == tasks_all_over) {
 		text = '#ПобедиЕГЭ2016\nФух, только что решил все ' + tasks_solved.toString() + ' задания по математике! %)';
 	} else if (tasks_solved == 0) {
-		text = '#ПобедиЕГЭ2016\nПока решил ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)'
+		text = '#ПобедиЕГЭ2016\nПока решил ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)';
 	} else {
-		text = '#ПобедиЕГЭ2016\nУже решил ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)'
+		text = '#ПобедиЕГЭ2016\nУже решил ' + tasks_solved.toString() + ' из ' + tasks_all_over.toString() + ' заданий по математике =)';
 	}
 	link = 'www.победиегэ.рф';
 	text = text + '\n\n' + link + '\n';
 	text  = text + '\n' + 'Приложение доступно в GooglePlay и AppStore.';
+
 	window.plugins.socialsharing.share(text, null, 'https://cloud.githubusercontent.com/assets/5472900/11669155/3dd0cf68-9e0c-11e5-942f-cbe95fb8b192.png', null);
-}
+	}
 
 

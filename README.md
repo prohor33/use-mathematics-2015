@@ -33,6 +33,11 @@ cordova plugin add cordova-plugin-network-information
 cordova plugin add cordova-plugin-x-socialsharing
 ```
 
+###Google Analytics plugin
+```sh
+cordova plugin add cordova-plugin-google-analytics
+```
+
 ##Troubleshooting
 If app is crashing on loading theme list, see this issue:<br>
 https://github.com/j3k0/cordova-plugin-purchase/issues/123  <br>

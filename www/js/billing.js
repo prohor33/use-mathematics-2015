@@ -2,8 +2,6 @@
     Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
  */
 
-IS_IOS = false;
-
 // Our application's global object
 var app = {};
 
@@ -29,6 +27,11 @@ app.initialize = function() {
 //
 // will just initialize the Purchase plugin
 app.onDeviceReady = function() {
+
+    if (window.cordova.logger) {
+        window.cordova.logger.__onDeviceReady();
+    }
+
     log('onDeviceReady');
     this.initStore();
 };
@@ -49,9 +52,12 @@ app.initStore = function() {
     store.validator = "https://api.fovea.cc:1982/check-purchase";
 
     // Inform the store of your products
+
+    id_str = IS_IOS ? 'crystal.tech.defeatuse.purchase.full_version' : 'crystal.tech.defeat_use.purchase.full_version';
+
     log('registerProducts');
     store.register({
-        id:    'crystal.tech.defeat_use.purchase.full_version',
+        id:    id_str,
         alias: 'full version',
         type:   store.NON_CONSUMABLE
     });
@@ -135,7 +141,9 @@ app.renderIAP = function(p) {
 };
 
 app.try_to_open_theme = function(theme_address) {
-    if (IS_IOS) {
+    console.log('try_to_open_theme');
+    console.log('NO_PURCHASE = ' + NO_PURCHASE  );
+    if (NO_PURCHASE) {
         document.location = theme_address;
         return;
     }

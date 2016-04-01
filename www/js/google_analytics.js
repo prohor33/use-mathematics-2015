@@ -1,10 +1,10 @@
 
-
+IS_IOS = true;
 
 
 function onDeviceReady() {
     console.log("onDeviceReady");
-    window.analytics.startTrackerWithId('UA-58047549-5')
+    window.analytics.startTrackerWithId(IS_IOS ? 'UA-58047549-6' : 'UA-58047549-5');
     
 
     trackView();

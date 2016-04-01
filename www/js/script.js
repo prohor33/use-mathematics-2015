@@ -1,3 +1,6 @@
+IS_IOS = true;
+NO_PURCHASE = false;
+
 var toolbar = {
 	parent_page: "",
 	onBack: function() {

@@ -5,7 +5,7 @@
 // Our application's global object
 var app = {};
 
-product_id_str = IS_IOS ? 'crystal.tech.defeatuse.purchase.full_version' : 'crystal.tech.defeat_use.purchase.full_version';
+product_id_str = IS_IOS ? 'crystal.tech.defeatuse.purchase.full_version2' : 'crystal.tech.defeat_use.purchase.full_version';
 
 //
 // Constructor

@@ -5,6 +5,8 @@
 // Our application's global object
 var app = {};
 
+product_id_str = IS_IOS ? 'crystal.tech.defeatuse.purchase.full_version' : 'crystal.tech.defeat_use.purchase.full_version';
+
 //
 // Constructor
 // -----------
@@ -53,11 +55,9 @@ app.initStore = function() {
 
     // Inform the store of your products
 
-    id_str = IS_IOS ? 'crystal.tech.defeatuse.purchase.full_version' : 'crystal.tech.defeat_use.purchase.full_version';
-
     log('registerProducts');
     store.register({
-        id:    id_str,
+        id:    product_id_str,
         alias: 'full version',
         type:   store.NON_CONSUMABLE
     });
@@ -158,7 +158,7 @@ app.try_to_open_theme = function(theme_address) {
 };
 
 app.purchase_full_version = function(p) {
-    store.order("crystal.tech.defeat_use.purchase.full_version");
+    store.order(product_id_str);
     window.analytics.trackEvent('Action', 'Open purchase window', 'Full version');
 }
 

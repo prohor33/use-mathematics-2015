@@ -1,5 +1,5 @@
 
-IS_IOS = false;
+IS_IOS = true;
 
 
 function onDeviceReady() {

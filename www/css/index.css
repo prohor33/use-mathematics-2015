@@ -107,9 +107,9 @@ html { overflow: hidden; }
 }
 
 /* ios */
-/*.title {
+.title {
     font-size: 150%;
-}*/
+}
 
 .toolbar {
     height: 12%;

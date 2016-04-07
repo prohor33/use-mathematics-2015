@@ -1,4 +1,4 @@
-IS_IOS = false;
+IS_IOS = true;
 NO_PURCHASE = false;
 
 var toolbar = {

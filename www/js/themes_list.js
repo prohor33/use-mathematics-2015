@@ -19,7 +19,7 @@ function i_to_old_index(i) {
 function render_themes_state() {
 	  var res = localStorage.getItem("full_version_product_state");
 	  var full_version = res == "owned";
-	  if (IS_IOS)
+	  if (NO_PURCHASE)
 	  	full_version = true;
 
 	  var images = document.getElementsByClassName("theme_img");

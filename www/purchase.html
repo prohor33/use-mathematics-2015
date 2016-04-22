@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2014-2015 Crystal Tech. All rights reserved.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/purchase.css" />
+        <title>Купить Победи ЕГЭ</title>
+    </head>
+    <body>
+        <div class="toolbar">
+            <img class="back" src="img/arrow_back.png" onclick="toolbar.onBack();"></img>
+            <div class="title">Купить<br>Победи ЕГЭ</div>
+        </div>
+        <div class="toolbar_space">
+        </div>
+
+        <div class="header"><b>Хотите больше задач?</b></div>
+        <div class="text">Скорее осуществите доступ<br>еще к 6 темам: (11-15, 17)<br>всего за <b>75,00 рублей!</b></div>
+        <div class="second_text">Плата взымается единожды</div>
+        <img class="wallet" src="img/wallet.png"</img>
+
+        <a href="#" class="button" id="buy_btn" onclick="on_buy()">Купить</a>
+        <a href="#" class="button" id="restore_btn" onclick="on_restore()">Восстановить покупку</a>
+
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/google_analytics.js"></script>
+        <script type="text/javascript" src="js/billing.js"></script>
+        <script type="text/javascript" src="js/purchase.js"></script>
+        <script type="text/javascript">
+            toolbar.setParent("themes_list.html");
+        </script>
+    </body>
+</html>

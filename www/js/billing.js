@@ -72,6 +72,9 @@ app.initStore = function() {
     store.error(function(error) {
         log('ERROR ' + error.code + ': ' + error.message);
         window.analytics.trackException('ERROR ' + error.code + ': ' + error.message, false);
+        if (typeof on_store_error === "function") {
+            on_store_error(error);
+        }
     });
 
     // When purchase of the full version is approved,
@@ -95,11 +98,13 @@ app.initStore = function() {
             }
 
             localStorage.setItem("full_version_product_state", "owned");
+        } else {
+            localStorage.setItem("full_version_product_state", "not_owned");
         }
 
         // document.getElementById("access-full-version-button").style.display =
         //     product.owned ? "block" : "none";
-        // alert("full content = " + product.owned);
+        // alert("updated, owned = " + product.owned);
     });
 
     // When the store is ready (i.e. all products are loaded and in their "final"
@@ -136,13 +141,15 @@ app.initStore = function() {
 };
 
 app.renderIAP = function(p) {
-    // theme_list.js should be included first
-    render_themes_state();
+    // themes_list.js should be included first
+    if (typeof render_themes_state === "function") {
+        render_themes_state();
+    }
 };
 
 app.try_to_open_theme = function(theme_address) {
     console.log('try_to_open_theme');
-    console.log('NO_PURCHASE = ' + NO_PURCHASE  );
+    console.log('NO_PURCHASE = ' + NO_PURCHASE);
     if (NO_PURCHASE) {
         document.location = theme_address;
         return;
@@ -150,7 +157,7 @@ app.try_to_open_theme = function(theme_address) {
 
     var res = localStorage.getItem("full_version_product_state");
     if (res != "owned") {
-        app.purchase_full_version();
+        document.location = "purchase.html";
         return;
     }
 

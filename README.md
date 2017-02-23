@@ -1,4 +1,4 @@
-#ЕГЭ Математика 2015
+#ЕГЭ Математика 2017
 
 ![icon](https://cloud.githubusercontent.com/assets/5472900/11669155/3dd0cf68-9e0c-11e5-942f-cbe95fb8b192.png)
 
